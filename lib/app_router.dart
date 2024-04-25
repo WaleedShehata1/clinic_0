@@ -6,6 +6,7 @@ import 'package:clinic/views/screens/Home.dart';
 import 'package:clinic/views/screens/auth/forgetpassword.dart';
 import 'package:clinic/views/screens/auth/verifycodesignup.dart';
 import 'package:clinic/views/screens/cart/cart.screen.dart';
+import 'package:clinic/views/screens/clinic_profile/clinic_profile_map.dart';
 import 'package:clinic/views/screens/file/campany_file.dart';
 import 'package:clinic/views/screens/file/fileCategory.dart';
 import 'package:clinic/views/screens/auth/login.dart';
@@ -27,7 +28,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 class AppRouter{
   
   static List<GetPage<dynamic>>? routes = [
-  GetPage(name: "/", page: () => const Language() , middlewares: [
+  GetPage(name: "/", page: () => const ClinicProfileMap() , middlewares: [
     MyMiddleWare()
   ]),
    // GetPage(name: AppRoute.login, page: () => const Login()),
