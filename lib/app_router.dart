@@ -26,9 +26,13 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRouter{
   
+  // static List<GetPage<dynamic>>? routes = [
+  // GetPage(name: "/", page: () => const Language() , middlewares: [
+  //   MyMiddleWare()
+  // ]),
   static List<GetPage<dynamic>>? routes = [
-  GetPage(name: "/", page: () => const Language() , middlewares: [
-    MyMiddleWare()
+  GetPage(name: "/", page: () => const Home() , middlewares: [
+  MyMiddleWare()
   ]),
    // GetPage(name: AppRoute.login, page: () => const Login()),
 

@@ -1,11 +1,14 @@
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/screens/clinic/clinic_services.screens.dart';
 import 'package:clinic/views/screens/clinic/text.dart';
+import 'package:clinic/views/screens/shop_online/online_shop.dart';
 import 'package:clinic/views/screens/videos/videos.list.screens.dart';
 import 'package:clinic/views/widgets/appBar.widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
+import 'home_page/home_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -27,6 +30,7 @@ class _HomeState extends State<Home> {
     BottomNavigationBarItem(
         icon: const Icon(
           Icons.dashboard_outlined,
+          //  size: 20,
           //  size: 20,
         ),
         label: "suppliers".tr),
@@ -59,10 +63,10 @@ class _HomeState extends State<Home> {
   ];
 
   List body = [
-    const MyWidget(),
+    const HomePage(),
     const ClinicServices(),
     const MyWidget(),
-    const MyWidget(),
+    const OnlineShop(),
     const MyWidget(),
     const VideosList()
   ];
@@ -70,7 +74,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgColor,
-      appBar: PreferredSize(
+
+      appBar:  PreferredSize(
           preferredSize: const Size.fromHeight(60.0),
           child: AppBarWibget(
             currentIndex: _currentIndex,

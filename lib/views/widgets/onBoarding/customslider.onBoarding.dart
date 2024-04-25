@@ -1,5 +1,4 @@
 import 'package:clinic/controller/onboarding_controller.dart';
-import 'package:clinic/core/localization/changelocal.dart';
 import 'package:clinic/views/widgets/logo.dart';
 import 'package:clinic/views/widgets/onBoarding/custombutton.onBoarding.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
-  CustomSliderOnBoarding({Key? key}) : super(key: key);
+  const CustomSliderOnBoarding({Key? key}) : super(key: key);
  // var localeController = Get.find<LocaleController>();
   //var local = localeController.checkLang;
   @override

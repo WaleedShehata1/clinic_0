@@ -207,8 +207,36 @@ class MyTranslation extends Translations {
           "doYouWantExit": "هل تريد الخروج من التطبيق ؟",
           "sure": "تاكيد",
           "cancel": "الغاء",
-                    "success": "نجاح",
+          "success": "نجاح",
+       //online shop
+        "Find the medicine":"ابحث عن  الدواء",
+          "Buy more medicines":"أكثر الأدوية شراء``",
+          "Price after discount: 250 EGP":"السعر بعد الخصم:250ُج",
+          "Before discount: 280 EGP":"قبل الخصم:280ج",
 
+          //appBar
+          "Online pharmacies":"صيدليات أونلاين",
+          //home page
+          "subscription":"اشتراك",
+          "You must register to enjoy our services": "يجب عليك التسجيل للاستمتاع بخدماتنا",
+          "Book an appointment with your specialist doctor": 'احجز ميعاد مع طبيبك المختص',
+          "Book a call with your specialist doctor": "احجز مكالمة مع طبيبك المختص",
+          "Book a home visit":"احجز زيارة منزلية",
+          "Book an x-ray at your home":"احجز عمل أشعة في منزلك",
+          "Articles":"مقالات",
+          //item view
+          "Indications for use:": "دواعي الأستخدام:",
+          "It provides a mechanism for implementing reservations very smoothly, and the steps that follow the reservation, whether to confirm the reservation.": " يوفر آلية تنفيذ الحجوزات بسلاسة شديدة ، و ما يتبع الحجز من خطوات سواء لتأكيد الحجز. ",
+          "Information about the pharmacy:":"معلومات عن الصيدلية:",
+          "Pharmacy name:": "اسم الصيدلية:",
+          "Away from you:": "تبعد عنك:",
+          "Al-Masry Pharmacy":"صيدلية المصري",
+          "30 km":"30 كيلومتر",
+          "Expiration date:":"تاريخ انتهاء الصلاحية:",
+//notification
+        "Notifications":"الإشعارات",
+          "today":"اليوم",
+          "Availability of Cavoside (anti-cough) at the pharmacy":"توافر دواء  كافوسيد (مضاد للسعال) في الصيدلية ",
         },
         "en": {
           "appname": "gApp",
@@ -433,6 +461,35 @@ class MyTranslation extends Translations {
     'min':'min',
     'video':'videos',
     'and':'and',
+          //online shop
+          "Find the medicine":"Find the medicine",
+          "Buy more medicines":"Buy more medicines",
+          "Price after discount: 250 EGP":"Price after discount: 250 EGP",
+          "Before discount: 280 EGP":"Before discount: 280 EGP",
+
+          //appBar
+          "Online pharmacies":"Online pharmacies",
+          //home page
+          "subscription":"subscription",
+          "You must register to enjoy our services": "You must register to enjoy our services",
+          "Book an appointment with your specialist doctor": 'Book an appointment with your specialist doctor',
+          "Book a call with your specialist doctor": "Book a call with your specialist doctor",
+          "Book a home visit":"Book a home visit",
+          "Book an x-ray at your home":"Book an x-ray at your home",
+          "Articles":"Articles",
+          //item view
+          "Indications for use:": "Indications for use:",
+          "It provides a mechanism for implementing reservations very smoothly, and the steps that follow the reservation, whether to confirm the reservation.": "It provides a mechanism for implementing reservations very smoothly, and the steps that follow the reservation, whether to confirm the reservation.",
+          "Information about the pharmacy:":"Information about the pharmacy:",
+          "Pharmacy name:": "Pharmacy name:",
+          "Away from you:": "Away from you:",
+          "Al-Masry Pharmacy":"Al-Masry Pharmacy",
+          "30 km":"30 km",
+          "Expiration date:":"Expiration date:",
+//notification
+          "Notifications":"Notifications",
+          "today":"today",
+          "Availability of Cavoside (anti-cough) at the pharmacy":"Availability of Cavoside (anti-cough) at the pharmacy ",
 
         }
       };

@@ -15,9 +15,27 @@ class AppBarWibget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return currentIndex ==0?AppBar(
+      leadingWidth: 0,
+      leading: const SizedBox(),
+      backgroundColor: AppColors.primaryColor,
+      title: const Text(
+        "أهلا و سهلا بيك",
+        style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w900,
+            fontSize: 18),
+      ),
+      actions: [ IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.notifications_none_outlined,
+            color: Colors.white,
+            size: 30,
+          ))],
+    ) : AppBar(
         backgroundColor: currentIndex != null && currentIndex == 5
-          ? AppColors.appBg
+          ? AppColors.appBg: currentIndex==3 ?  AppColors.whiteColor
           : bgColor ,
       centerTitle: true,
       title: currentIndex != null && currentIndex == 10
@@ -39,8 +57,17 @@ class AppBarWibget extends StatelessWidget {
       surfaceTintColor: Colors.transparent,
       bottomOpacity: 0.0,
       elevation: 0.0,
-      leadingWidth: 100.w,
-      leading: Row(
+      leadingWidth: currentIndex==3?200.w: 100.w,
+      leading:currentIndex==3?Padding(
+        padding: const EdgeInsetsDirectional.only(start: 10),
+        child: Text(
+          "Online pharmacies".tr,
+          style: TextStyle(
+              color: AppColors.primaryColor,
+              fontSize: 26.sp,
+              fontWeight: FontWeight.w900),
+        ),
+      ):  Row(
         children: [
           currentIndex != null && currentIndex == 5
               ? Container(
@@ -63,20 +90,20 @@ class AppBarWibget extends StatelessWidget {
                     ],
                   ),
                 )
-              : GestureDetector(
+              :  currentIndex == 4 ||currentIndex == 3 ||currentIndex == 2 ||currentIndex == 1? const SizedBox(): GestureDetector(
                   onTap: onPressLeading,
                   child:  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Icon(
                       Icons.arrow_back,
-                      color: currentIndex! == 11?AppColors.whiteColor:AppColors.primaryColor ,
+                      color: currentIndex! == 11 || currentIndex==12?AppColors.whiteColor:AppColors.primaryColor ,
                     ),
                   ),
                 ),
         ],
       ),
       actions: [
-        currentIndex != null && currentIndex == 10 && currentIndex == 11
+        currentIndex != null && currentIndex == 10 || currentIndex == 11
             ? const SizedBox()
             : currentIndex != null && currentIndex == 5
                 ? Padding(
@@ -116,7 +143,7 @@ class AppBarWibget extends StatelessWidget {
                         //     ),
                         InkWell(
                             onTap: () {},
-                            child: SvgPicture.asset(ImagesPath.icMessage,color: currentIndex == 11?AppColors.whiteColor:AppColors.primaryColor,)
+                            child: SvgPicture.asset(ImagesPath.icMessage,color: currentIndex == 11 ||currentIndex==12 ?AppColors.whiteColor:AppColors.primaryColor,)
                             // child: const Icon(
                             //   Icons.messenger_outline_outlined,
                             //   color: AppColors.primaryColor,
@@ -124,7 +151,7 @@ class AppBarWibget extends StatelessWidget {
                             ),
                         IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset(ImagesPath.icNotifations,color: currentIndex == 11?AppColors.whiteColor:AppColors.primaryColor)
+                            icon: Icon(Icons.notifications_none ,size: 30,color: currentIndex == 11   || currentIndex==12?AppColors.whiteColor: AppColors.primaryColor)
                             //  const Icon(Icons.notifications_none_rounded,
                             //     color: AppColors.primaryColor)
                             )

@@ -10,7 +10,7 @@ abstract class AppColors {
   static const Color whiteColor = Color.fromRGBO(255, 255, 255, 1);
   static const Color lightGrey = Color.fromRGBO(244, 244, 244, 1);
   static const Color lightBlue = Color(0xFF9FD2FC);
-  
+
   static const Color lightBgBlue = Color(0xFFDEF0FF);
   static const Color hintColor = Color(0xFFC2C6D0);
   static const Color primaryColor = Color.fromRGBO(0, 112, 205, 1);

@@ -148,18 +148,18 @@ class PersonFileControllerImp extends PersonFileController {
   
   }
 
-  @override
-  void dispose() {
-    //  email.dispose();
-    fullname.dispose();
-    height.dispose();
-    weight.dispose();
-    age.dispose();
-    gender.dispose();
-    pressure.dispose();
-    sugar.dispose();
-    emergencyte1.dispose();
-    emergencyte2.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   //  email.dispose();
+  //   fullname.dispose();
+  //   height.dispose();
+  //   weight.dispose();
+  //   age.dispose();
+  //   gender.dispose();
+  //   pressure.dispose();
+  //   sugar.dispose();
+  //   emergencyte1.dispose();
+  //   emergencyte2.dispose();
+  //   super.dispose();
+  // }
 }

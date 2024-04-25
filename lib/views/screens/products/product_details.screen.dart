@@ -70,7 +70,7 @@ class ProductDetails extends StatelessWidget {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children:[ Container(
-                                        padding: EdgeInsets.all(3),
+                                        padding: const EdgeInsets.all(3),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(20),

@@ -14,6 +14,27 @@ static const onBoarding3 = "${_path}Union.png";
 static const onBoarding4 = "${_path}boarding_4.png";
 static const onBoarding5 = "${_path}onboarding_5.png";
 
+   static const home1 = "${_path}medical-examiner 1.png";
+   static const home2 = "${_path}customer-service.png";
+   static const home3 = "${_path}house 1.png";
+   static const home4 = "${_path}observation2.png";
+   static const home5 = "${_path}Group 1171275163.png";
+   static const itemView = "${_path}WhatsApp_Image_2024-03-03_at_7.31 1.png";
+
+
+
+   static const onlineShop = "${_path}WhatsApp_Image_2024-03-03_at_7.31 1.png";
+   static const onlineShop2 = "${_path}Vector2.png";
+
+
+
+   static const visitings = "${_path}Frame.png";
+   static const icMenu = "${_path}menu.png";
+   static const imageItem = "${_path}WhatsApp_Image_2024-03-03_at_7.31 1.png";
+   static const imageShopCar = "${_path}Vector3.png";
+   static const imageItem2 = "${_path}WhatsApp_Image_2024-03-03_at_7.31 1.png";
+   static const notificationAvatar = "${_path}Ellipse 36.png";
+
 static const icFacebookLogo = "${_pathIcon}facebook_logo.png";
 static const icGoogleLogo = "${_pathIcon}google_logo.png";
 static const icTwitterLogo = "${_pathIcon}twitter_logo.png";
