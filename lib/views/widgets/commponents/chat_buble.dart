@@ -6,15 +6,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class chatBuble1 extends StatelessWidget {
+
+
   double start;
   double end;
   Color color;
+
   chatBuble1({
     Key? key,
     required this.start,
     required this.end,
     required this.color,
   }) : super(key: key);
+  @override
   Widget build(BuildContext context) {
     return Align(
       child: Container(
