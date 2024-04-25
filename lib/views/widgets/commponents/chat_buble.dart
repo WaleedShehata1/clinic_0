@@ -1,8 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types
+import 'package:clinic/core/consts/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'constant.dart';
+
 
 class chatBuble1 extends StatelessWidget {
   double start;
@@ -21,7 +22,7 @@ class chatBuble1 extends StatelessWidget {
             bottom: 5.h, end: end.w, start: start.w, top: 5.h),
         padding: EdgeInsetsDirectional.all(10.w),
         decoration: BoxDecoration(
-            border: Border.all(color: primerColor),
+            border: Border.all(color: AppColors.primaryColor),
             color: color,
             borderRadius: BorderRadius.circular(15).r),
         child: Text(
@@ -29,7 +30,7 @@ class chatBuble1 extends StatelessWidget {
           textDirection: TextDirection.ltr,
           style: TextStyle(
             fontSize: 16.sp,
-            color: color == Colors.white ? primerColor : Colors.white,
+            color: color == Colors.white ? AppColors.primaryColor : Colors.white,
           ),
         ),
       ),
