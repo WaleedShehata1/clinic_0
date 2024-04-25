@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'constant.dart';
 
 Container cardItemSearch() {
   return Container(
@@ -23,12 +22,12 @@ Container cardItemSearch() {
       Container(
         height: 105,
         padding: const EdgeInsetsDirectional.all(15),
-        decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
                 bottomRight: Radius.circular(20)),
-            color: primerColor,
-            boxShadow: const [
+            color: AppColors.primaryColor,
+            boxShadow: [
               BoxShadow(
                   color: Colors.grey,
                   offset: Offset(0, 2),

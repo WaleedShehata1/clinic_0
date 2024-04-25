@@ -20,6 +20,7 @@ static const onBoarding5 = "${_path}onboarding_5.png";
    static const home4 = "${_path}observation2.png";
    static const home5 = "${_path}Group 1171275163.png";
    static const itemView = "${_path}WhatsApp_Image_2024-03-03_at_7.31 1.png";
+   static const person = "${_path}person.png";
 
 
 

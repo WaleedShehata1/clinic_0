@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../core/consts/colors.dart';
 import '../../../core/consts/images.dart';
-import 'constant.dart';
+
 
 Container cardItem() {
   return Container(
@@ -12,7 +13,7 @@ Container cardItem() {
     decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: primerColor,
+          color: AppColors.primaryColor,
         ),
         borderRadius: BorderRadius.circular(20).r),
     child: Stack(children: [
@@ -53,7 +54,7 @@ Container cardItem() {
                   style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
-                      color: primerColor),
+                      color: AppColors.primaryColor),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.only(start: 10.w, end: 20.w),
