@@ -4,7 +4,6 @@ import 'package:clinic/views/widgets/auth/custom_button.auth.dart';
 import 'package:clinic/views/widgets/auth/custom_texttitle.auth.dart';
 import 'package:clinic/views/widgets/files/custom_textfield.widgets.dart';
 import 'package:clinic/views/widgets/files/drop_down_blood.dart';
-import 'package:clinic/views/widgets/files/drop_down_gender.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -15,10 +14,10 @@ class PersonTabTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return    Container(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+           // padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
             child: Form(
-            //  key: controller.tabTwo,
-              child: ListView(shrinkWrap: true, children: [
+          //   key: controller.tabTwo,
+              child: Column( children: [
                 // const LogoAuth(),
               //  SizedBox(height: 10.h),
                 Row(
@@ -52,8 +51,6 @@ class PersonTabTwo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     BloodTypeDropdown(),
-                            //  GenderDropdown(),
-
                   ],
                 ),
                 SizedBox(height: 5.h),
@@ -148,12 +145,14 @@ class PersonTabTwo extends StatelessWidget {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width/2.4,
-                      child: Text(
-                        "(${"historydetails".tr} )",
-                        style: TextStyle(
-                            color: AppColors.primaryColor,
-                            fontSize:Get.locale!.languageCode == "ar"? 14.sp:10.sp,
-                            fontWeight: FontWeight.w600),
+                      child: Expanded(
+                        child: Text(
+                          "(${"historydetails".tr} )",
+                          style: TextStyle(
+                              color: AppColors.primaryColor,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
                     ),
                   ],
@@ -176,7 +175,7 @@ class PersonTabTwo extends StatelessWidget {
                               size: 25.sp,
                             ),
                             onPressed: () {
-                              controller.uploadFiles();
+                            // controller.uploadFiles();
                             },
                           )),
                     ),
@@ -189,7 +188,7 @@ class PersonTabTwo extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        controller.goToHomePage();
+                     //   controller.next();
                       },
                       child: Container(
                         height: 30.h,
@@ -242,7 +241,7 @@ class PersonTabTwo extends StatelessWidget {
                       child: CustomButtomAuth(
                           text: "sure".tr,
                           onPressed: () {
-                            controller.goToHomePage();
+                        //    controller.personFile();
                           }),
                     ),
                   ],

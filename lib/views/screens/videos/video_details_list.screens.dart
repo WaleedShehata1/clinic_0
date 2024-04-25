@@ -31,10 +31,10 @@ class VideoDetailsList extends StatelessWidget {
                 ),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       
-                      Text("  ${'specialcourse'.tr} فصائل الدم",
+                      Text("  ${'specialcourse'.tr} ${'title1'.tr} ",
                           style: TextStyle(
                               fontFamily: "ArefRuqaa",
-                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:18.sp,
+                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:16.sp,
                               color: AppColors.blackColor)),
                       SizedBox(
                         width: 10.w,
@@ -81,10 +81,10 @@ class VideoDetailsList extends StatelessWidget {
                                 itemCount: 10,
                                 itemBuilder: (BuildContext context, int index) => VideosWidget(
                       image: ImagesPath.video,
-                      title: 'فيديوهات عن فصائل الدم ',
+                      title: 'title2'.tr,
                       time: '1س و 36د',
                       view: '2.4k',
-                      date: '6 شهور',
+                      date: '6 ${'months'.tr} ',
                       onPress: () {  Get.toNamed(AppRoutes.videoDetails);},
                     ),
                   ),

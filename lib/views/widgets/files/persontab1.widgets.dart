@@ -16,7 +16,7 @@ class PersonTabOne extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       child: Form(
-        key: controller.tabOne,
+      //  key: controller.tabOne,
         child: ListView(shrinkWrap: true, children: [
           // const LogoAuth(),
         //  SizedBox(height: 10.h),
@@ -147,7 +147,7 @@ class PersonTabOne extends StatelessWidget {
                   )),
               InkWell(
                 onTap: () {
-                  controller.next();
+                //  controller.next();
                 },
                 child: Container(
                   height: 30.h,

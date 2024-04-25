@@ -166,6 +166,9 @@ class MyTranslation extends Translations {
     'min':'دقيقة',
     'video':'فيديو',
         'and':'و',
+        'months':'شهور',
+        'title1':'فصائل الدم',
+        'title2':'فيديوهات عن فصائل الدم ',
 
      
 
@@ -447,7 +450,7 @@ class MyTranslation extends Translations {
     'thisCourseInclude':'This Course includes',
     'subscribe':'Subscribe Now',
     'monthly':'Monthly',
-    'priceAfterDiscount':'Price after discount',
+    'priceAfterDiscount':'Price ',
     'IndicationsForUse':'Indications for use',
    
     'pharmacyInfo':'Information about the pharmacy',
@@ -461,6 +464,9 @@ class MyTranslation extends Translations {
     'min':'min',
     'video':'videos',
     'and':'and',
+     'months':'months',
+      'title1':'Blood types',
+        'title2':'videos about Blood type',
           //online shop
           "Find the medicine":"Find the medicine",
           "Buy more medicines":"Buy more medicines",

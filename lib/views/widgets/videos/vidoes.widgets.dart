@@ -125,8 +125,8 @@ class VideosWidget extends StatelessWidget {
                             child: Text(
                               title,
                               maxLines: 2,
-                              textDirection: TextDirection.rtl,
-                              textAlign: TextAlign.right,
+                             // textDirection: TextDirection.rtl,
+                              //textAlign: TextAlign.right,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
@@ -158,7 +158,7 @@ class VideosWidget extends StatelessWidget {
                           '${view} ${'seen'.tr}',
                           style: TextStyle(
                               //  fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
+                              fontSize:  Get.locale!.languageCode == "ar"?12.sp:10.sp,
                               color: AppColors.blackColor),
                         ),
                         SizedBox(
@@ -168,7 +168,7 @@ class VideosWidget extends StatelessWidget {
                           '${'from'.tr} ${date} ',
                           style: TextStyle(
                               //fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
+                              fontSize: Get.locale!.languageCode == "ar"?12.sp:10.sp,
                               color: AppColors.blackColor),
                         ),
                         

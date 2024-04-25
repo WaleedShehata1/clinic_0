@@ -1,3 +1,5 @@
+import 'package:clinic/views/widgets/files/persontab1.widgets.dart';
+import 'package:clinic/views/widgets/files/persontab2.widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:clinic/core/classes/status_request.dart';
 import 'package:clinic/core/consts/consts.dart';
@@ -17,8 +19,8 @@ abstract class PersonFileController extends GetxController {
 class PersonFileControllerImp extends PersonFileController {
   // GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
-  final GlobalKey<FormState> tabOne = GlobalKey();
-  final GlobalKey<FormState> tabTwo = GlobalKey();
+  final GlobalKey<FormState>? tabOne = GlobalKey();
+  final GlobalKey<FormState>? tabTwo = GlobalKey();
   late TextEditingController fullname;
   late TextEditingController bloodcat;
   late TextEditingController height;
@@ -37,6 +39,7 @@ class PersonFileControllerImp extends PersonFileController {
   // SignupData signupData = SignupData(Get.find());
 
   List data = [];
+  List tabs = [1, 2];
 
   late StatusRequest statusRequest;
   @override
@@ -44,7 +47,7 @@ class PersonFileControllerImp extends PersonFileController {
     OverlayLoadingProgress.start();
     // var formdata = formstate.currentState;
 //var formdata = tabOne.currentState;
-    var formdata = tabTwo.currentState;
+    var formdata = tabTwo?.currentState;
 
     if (formdata!.validate()) {
       // Get.offNamed(AppRoutes.verfiyCodeSignUpScreen);
@@ -77,7 +80,7 @@ class PersonFileControllerImp extends PersonFileController {
 
   @override
   goToHomePage() {
-    Get.offNamed(AppRoutes.loginScreen);
+    Get.toNamed(AppRoutes.homepageScreen);
   }
 
   @override
@@ -114,39 +117,71 @@ class PersonFileControllerImp extends PersonFileController {
     throw UnimplementedError();
   }
 
+  
   @override
   next() {
     currentPage++;
-
-      var formdata = tabOne.currentState;
-      var formdata2 = tabTwo.currentState;
-
-      if (formdata!.validate()) {
-        pageController.animateToPage(currentPage,
-            duration: const Duration(milliseconds: 900),
-            curve: Curves.easeInOut);
-      }else if (formdata2!.validate()) {
-        pageController.animateToPage(currentPage,
-            duration: const Duration(milliseconds: 900),
-            curve: Curves.easeInOut);
-      }
-    
+   pageController.animateToPage(currentPage,
+          duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
+   
+    // if (currentPage > tabs.length-1) {
+    //    Get.toNamed(AppRoutes.homepageScreen) ; 
+    // } else {
+    //   pageController.animateToPage(currentPage,
+    //       duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
+    // }
   }
 
   @override
   onPageChanged(int index) {
-     var formdata = tabOne.currentState;
-     var formdata2 = tabTwo.currentState;
-
-      if (formdata!.validate()) {
-   currentPage = index;
+    currentPage = index;
     update();
-      }else  if (formdata2!.validate()) {
-   currentPage = index;
-    update();
-      }
-  
   }
+
+
+  // @override
+  // next() {
+  //   currentPage++;
+
+  //     // var formdata = tabOne?.currentState!;
+  //     // var formdata2 = tabTwo?.currentState;
+
+  //     // if (formdata!.validate()) {
+  //     //   pageController.animateToPage(currentPage,
+  //     //       duration: const Duration(milliseconds: 900),
+  //     //       curve: Curves.easeInOut);
+  //     // }else if (formdata2!.validate()) {
+  //     //   pageController.animateToPage(currentPage,
+  //     //       duration: const Duration(milliseconds: 900),
+  //     //       curve: Curves.easeInOut);
+  //     // }
+
+  //      if (currentPage > 1) {
+  //      Get.to(AppRoutes.homepageScreen) ; 
+  //   } else {
+  //     pageController.animateToPage(currentPage,
+  //         duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
+  //   }
+    
+  // }
+
+  // @override
+  // onPageChanged(int index) {
+  // //    var formdata = tabOne?.currentState;
+  // //    var formdata2 = tabTwo?.currentState;
+
+  // //     if (formdata!.validate()) {
+  // //  currentPage = index;
+  // //   update();
+  // //     }else  if (formdata2!.validate()) {
+  // //  currentPage = index;
+  // //   update();
+  // //     }
+
+  //        currentPage = index;
+
+  
+  // }
 
   // @override
   // void dispose() {

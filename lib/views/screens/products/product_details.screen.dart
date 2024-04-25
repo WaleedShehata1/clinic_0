@@ -32,7 +32,12 @@ class ProductDetails extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 3.4,
                 ),
                 Container(
-                    padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height < 700?200.h:100.h, left: 20, right: 20),
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height < 700
+                            ? 200.h
+                            : 100.h,
+                        left: 20,
+                        right: 20),
                     constraints: BoxConstraints(
                         minHeight: MediaQuery.of(context).size.height * 2 / 3),
                     decoration: const BoxDecoration(
@@ -56,38 +61,45 @@ class ProductDetails extends StatelessWidget {
                                       //   width: MediaQuery.of(context).size.width/4,
                                       //   child: Expanded(
                                       //     child:
-                                           Text(
-                                            "${"priceAfterDiscount".tr} : 2538 ${"pound".tr}",
-                                            style: TextStyle(color: AppColors.secondryColor,
-                                                fontWeight: FontWeight.bold,fontSize:Get.locale!.languageCode == "ar"? 12.sp: 9.sp),
-                                          ),
+                                      Text(
+                                        "${"priceAfterDiscount".tr} : 23 ${"pound".tr}",
+                                        style: TextStyle(
+                                            color: AppColors.secondryColor,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize:
+                                                Get.locale!.languageCode == "ar"
+                                                    ? 10.sp
+                                                    : 10.sp),
+                                      ),
                                       //  ),
-                                    //  )
+                                      //  )
                                     ]),
                                     SizedBox(
                                       height: 10.h,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children:[ Container(
-                                        padding: const EdgeInsets.all(3),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          color: AppColors.primaryColor,
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(50),
-                                          child: Image.asset(
-                                            ImagesPath.cart,
-                                            width: 40.w,
-                                            height: 40.h,
-                                            fit: BoxFit.fill,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.all(3),
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              color: AppColors.primaryColor,
+                                            ),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(50),
+                                              child: Image.asset(
+                                                ImagesPath.cart,
+                                                width: 40.w,
+                                                height: 40.h,
+                                                fit: BoxFit.fill,
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                      ),]
-                                    ),
+                                        ]),
                                   ],
                                 ),
                               ),
@@ -108,7 +120,7 @@ class ProductDetails extends StatelessWidget {
                                   children: [
                                     Row(children: [
                                       Text(
-                                        "خيط 0 راوند 2",
+                                        "productTitle".tr,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             fontSize: 15.sp,
@@ -173,7 +185,7 @@ class ProductDetails extends StatelessWidget {
                                         padding:
                                             const EdgeInsets.only(right: 8.0),
                                         child: Text(
-                                          "يوفر آلية تنفيذ الحجوزات بسلاسة شديدة، و ما يتبع الحجز من خطوات سواء لتأكيد الحجز.",
+                                          "onboardingBody2".tr,
                                           style: TextStyle(
                                               fontSize: 15.sp,
                                               color: AppColors.blackColor),
@@ -224,7 +236,7 @@ class ProductDetails extends StatelessWidget {
                                         padding:
                                             const EdgeInsets.only(right: 8.0),
                                         child: Text(
-                                          "متجر المصري للمستلزمات",
+                                          "Al-Masry Pharmacy".tr,
                                           style: TextStyle(
                                               fontSize: 15.sp,
                                               color: AppColors.blackColor),
@@ -250,7 +262,7 @@ class ProductDetails extends StatelessWidget {
                                         child: Align(
                                           alignment: Alignment.center,
                                           child: Text(
-                                            "30 كيلومتر",
+                                            "30 km".tr,
                                             style: TextStyle(
                                                 fontSize: 15.sp,
                                                 color: AppColors.blackColor),

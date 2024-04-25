@@ -25,10 +25,10 @@ class VideoDetails extends StatelessWidget {
             ),
              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       
-                      Text("  ${'specialcourse'.tr} فصائل الدم",
+                      Text("  ${'specialcourse'.tr}  ${'title1'.tr}",
                           style: TextStyle(
                               fontFamily: "ArefRuqaa",
-                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:18.sp,
+                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:16.sp,
                               color: AppColors.blackColor)),
                       SizedBox(
                         width: 10.w,
