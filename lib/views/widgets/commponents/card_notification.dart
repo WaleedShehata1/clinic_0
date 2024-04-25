@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'constant.dart';
+
 
 Widget cardNotification() {
   return Container(
@@ -11,7 +11,7 @@ Widget cardNotification() {
     margin: EdgeInsetsDirectional.all(10.w),
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25).r,
-        border: Border.all(color: primerColor, width: 2.w)),
+        border: Border.all(color: AppColors.primaryColor, width: 2.w)),
     child: Column(
       children: [
         Row(
@@ -32,7 +32,7 @@ Widget cardNotification() {
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w900,
-                color: primerColor,
+                color: AppColors.primaryColor,
               ),
             ),
             Row(

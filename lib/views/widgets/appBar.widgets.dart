@@ -143,7 +143,7 @@ class AppBarWibget extends StatelessWidget {
                         //     ),
                         InkWell(
                             onTap: () {},
-                            child: SvgPicture.asset(ImagesPath.icMessage,color: currentIndex == 11 ||currentIndex==12 ?AppColors.whiteColor:AppColors.primaryColor,)
+                            child: SvgPicture.asset(color: currentIndex == 11 ||currentIndex==12 ?AppColors.whiteColor:AppColors.primaryColor,ImagesPath.icMessage,)
                             // child: const Icon(
                             //   Icons.messenger_outline_outlined,
                             //   color: AppColors.primaryColor,
