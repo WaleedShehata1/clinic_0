@@ -1,14 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:clinic/controller/files/person_file.controller.dart';
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/widgets/appBarSimple.widgets.dart';
-import 'package:clinic/views/widgets/auth/custom_button.auth.dart';
-import 'package:clinic/views/widgets/auth/custom_texttitle.auth.dart';
-import 'package:clinic/views/widgets/files/custom_textfield.widgets.dart';
-import 'package:clinic/views/widgets/files/drop_down_gender.dart';
 import 'package:clinic/views/widgets/files/persontab1.widgets.dart';
 import 'package:clinic/views/widgets/files/persontab2.widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class PersonFile extends StatelessWidget {
@@ -24,8 +21,7 @@ class PersonFile extends StatelessWidget {
             child: AppBarSimpleWibget(
               onPressLeading: () => Get.back(),
             )),
-        body: SafeArea(
-            child: GetBuilder<PersonFileControllerImp>(builder: (controller) {
+        body: GetBuilder<PersonFileControllerImp>(builder: (controller) {
           return PageView.builder(
               controller: controller.pageController,
               onPageChanged: (value) {
@@ -33,7 +29,7 @@ class PersonFile extends StatelessWidget {
               },
               itemCount: tabs.length,
               itemBuilder: (context, i) => tabs[i]);
-        })));
+        }));
   }
 }
 

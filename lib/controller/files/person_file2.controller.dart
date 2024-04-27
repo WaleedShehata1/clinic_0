@@ -1,8 +1,8 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/cupertino.dart';
 import 'package:clinic/core/classes/status_request.dart';
 import 'package:clinic/core/consts/consts.dart';
-import 'package:clinic/core/functions/handingData.dart';
-import 'package:clinic/data/datasource/remote/auth/signup_data.dart';
 import 'package:get/get.dart';
 import 'package:overlay_kit/overlay_kit.dart';
 
@@ -82,7 +82,7 @@ class PersonFileTwoControllerImp extends PersonFileTwoController {
     throw UnimplementedError();
   }
 
-   @override
+  @override
   goToPersonFile() {
     Get.offNamed(AppRoutes.personFile);
   }

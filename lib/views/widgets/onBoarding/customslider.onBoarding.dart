@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
   const CustomSliderOnBoarding({Key? key}) : super(key: key);
- // var localeController = Get.find<LocaleController>();
+  // var localeController = Get.find<LocaleController>();
   //var local = localeController.checkLang;
   @override
   Widget build(BuildContext context) {
@@ -27,18 +27,26 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Stack(
-                        alignment:Get.locale!.languageCode == "ar"? Alignment.topLeft: Alignment.topRight,
+                        alignment: Get.locale!.languageCode == "ar"
+                            ? Alignment.topLeft
+                            : Alignment.topRight,
                         children: [
                           Image.asset(
                             onBoardingList[i].image!,
-                            height: MediaQuery.of(context).size.height / 2.1,
+                            height: MediaQuery.of(context).size.height / 1.6.h,
                             width: MediaQuery.of(context).size.width - 30.w,
                             fit: BoxFit.fill,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: InkWell(
-                              child: Text('skip'.tr),
+                              child: Text(
+                                'skip'.tr,
+                                style: TextStyle(
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                               onTap: () {
                                 Get.offAllNamed(AppRoutes.signupScreen);
                               },
@@ -54,7 +62,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                               fontSize: 22.sp)),
                       SizedBox(height: 10.h),
                       Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
                           constraints: BoxConstraints(minHeight: 150.h),
                           width: double.infinity,
                           alignment: Alignment.center,

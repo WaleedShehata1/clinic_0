@@ -92,9 +92,11 @@ class ClinicServices extends StatelessWidget {
                 height: 5.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 20.0,left: 20.0),
+                padding: const EdgeInsets.only(right: 20.0, left: 20.0),
                 child: Align(
-                  alignment:Get.locale!.languageCode == "ar"? Alignment.centerRight:Alignment.centerLeft,
+                  alignment: Get.locale!.languageCode == "ar"
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
                   child: Text(
                     "specialCategories".tr,
                     style:
@@ -108,30 +110,29 @@ class ClinicServices extends StatelessWidget {
                     children: List.generate(
                         3,
                         (index) => InkWell(
-                    onTap: () {
-                       Get.toNamed(AppRoutes.products);
-                    },
-                    child:Container(
-                            margin: const EdgeInsets.all(8.0),
-                            padding: const EdgeInsets.all(8.0),
-                            height: 70.h,
-                            width: 100.w,
-                            decoration: const BoxDecoration(
-                              color: AppColors.cardBg,
-                              //    boxShadow: BoxShadow()
-                            ),
-                            // child:SvgPicture.asset(
-                            // ListsApp.specialCatsList[index + 3],
-                            // fit: BoxFit.fill,
-                            // height: 70.h,
-                            // width: 80.w,)
-                            child: Image.asset(
-                              ListsApp.specialCatsList[index + 3],
-                              fit: BoxFit.fill,
-                              height: 70.h,
-                              width: 80.w,
-                            ))))
-                            ),
+                            onTap: () {
+                              Get.toNamed(AppRoutes.products);
+                            },
+                            child: Container(
+                                margin: const EdgeInsets.all(8.0).w,
+                                padding: const EdgeInsets.all(8.0).w,
+                                height: 70.h,
+                                width: 100.w,
+                                decoration: const BoxDecoration(
+                                  color: AppColors.cardBg,
+                                  //    boxShadow: BoxShadow()
+                                ),
+                                // child:SvgPicture.asset(
+                                // ListsApp.specialCatsList[index + 3],
+                                // fit: BoxFit.fill,
+                                // height: 70.h,
+                                // width: 80.w,)
+                                child: Image.asset(
+                                  ListsApp.specialCatsList[index + 3],
+                                  fit: BoxFit.fill,
+                                  height: 70.h,
+                                  width: 80.w,
+                                ))))),
               )
             ],
           )),

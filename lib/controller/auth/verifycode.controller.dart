@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_overrides
+
 import 'package:clinic/core/consts/consts.dart';
 import 'package:get/get.dart';
 
@@ -6,9 +8,8 @@ abstract class VerifyCodeController extends GetxController {
   goToResetPassword();
 }
 
-class VerifyCodeControllerImp extends VerifyCodeController {  
-
-  late String verifycode  ; 
+class VerifyCodeControllerImp extends VerifyCodeController {
+  late String verifycode;
 
   @override
   checkCode() {}
@@ -19,9 +20,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
   }
 
   @override
-  void onInit() {  
+  void onInit() {
     super.onInit();
   }
-
- 
 }

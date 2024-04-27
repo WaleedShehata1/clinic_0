@@ -16,54 +16,60 @@ class HomePage extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(children: [
-         SizedBox(height: 10.h,),
+        SizedBox(
+          height: 10.h,
+        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: double.infinity,
-              margin:  EdgeInsetsDirectional.only(
-                start: 10.w,
+              margin: EdgeInsetsDirectional.only(
+                start: 15.w,
                 end: 15.w,
               ),
-              padding: const EdgeInsetsDirectional.all(10),
+              padding: EdgeInsetsDirectional.all(10.w),
               decoration: BoxDecoration(
                   color: const Color(0xffFF0000),
-                  borderRadius: BorderRadius.circular(12)),
-              child:  Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "subscription".tr,
-                      style: const TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.w900),
-                    ),
-                    Text(
-                      "You must register to enjoy our services".tr,
-                      style: const TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.w200),
-                    ),
-                  ]),
+                  borderRadius: BorderRadius.circular(12).r),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(12.r),
+                onTap: () {},
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "subscription".tr,
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w900),
+                      ),
+                      Text(
+                        "You must register to enjoy our services".tr,
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w200),
+                      ),
+                    ]),
+              ),
             ),
             SizedBox(
               child: iconText(
-                margin: 30,
+                margin: 15,
                 text: 'Book an appointment with your specialist doctor'.tr,
                 image: ImagesPath.home1,
               ),
             ),
             iconText(
-              margin: 15,
+              margin: 10,
               text: "Book a call with your specialist doctor".tr,
               image: ImagesPath.home2,
             ),
             iconText(
-              margin: 15,
+              margin: 10,
               text: "Book a home visit".tr,
               image: ImagesPath.home3,
             ),
             iconText(
-              margin: 15,
+              margin: 10,
               text: "Book an x-ray at your home".tr,
               image: ImagesPath.home4,
             ),
@@ -75,11 +81,11 @@ class HomePage extends StatelessWidget {
                 top: 25.h,
               ),
             ),
-             Padding(
+            Padding(
               padding: EdgeInsetsDirectional.all(10.w),
               child: Text(
                 "Articles".tr,
-                style:  TextStyle(
+                style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w800,
                   fontSize: 18.sp,
@@ -89,15 +95,17 @@ class HomePage extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 118.h,
-              margin:  EdgeInsets.all(10.w),
+              margin: EdgeInsets.all(10.w),
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15).r,
               ),
               child: InkWell(
+                borderRadius: BorderRadius.circular(15.r),
                 onTap: () {},
                 child: Image.asset(
                   ImagesPath.home5,
+                  fit: BoxFit.cover,
                   width: 10.w,
                 ),
               ),

@@ -11,8 +11,9 @@ class CustomTextTitle extends StatelessWidget {
     return Text(text,
         //  textAlign: TextAlign.right,
         style: TextStyle(
-            color: AppColors.blackColor,
-            fontWeight: FontWeight.bold,
-            fontSize: 22.sp));
+          color: AppColors.blackColor,
+          fontWeight: FontWeight.bold,
+          fontSize: 24.sp,
+        ));
   }
 }

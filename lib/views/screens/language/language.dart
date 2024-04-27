@@ -1,4 +1,3 @@
-
 import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:clinic/core/localization/changelocal.dart';
@@ -17,21 +16,24 @@ class Language extends GetView<LocaleController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("chooseLanguage".tr, style: TextStyle(fontSize: 25.sp)),
-              const SizedBox(height: 20),
+              Text("chooseLanguage".tr,
+                  style: TextStyle(
+                    fontSize: 26.sp,
+                    fontWeight: FontWeight.w900,
+                  )),
+              SizedBox(height: 20.h),
               CustomButtonLang(
                   textbutton: "Ar",
                   onPressed: () {
                     controller.changeLang("ar");
-                    Get.offNamed(AppRoutes.onBoarding) ; 
+                    Get.offNamed(AppRoutes.onBoarding);
                   }),
-                                const SizedBox(height: 20),
-
+              const SizedBox(height: 20),
               CustomButtonLang(
                   textbutton: "En",
                   onPressed: () {
                     controller.changeLang("en");
-                    Get.offNamed(AppRoutes.onBoarding) ; 
+                    Get.offNamed(AppRoutes.onBoarding);
                   }),
             ],
           )),

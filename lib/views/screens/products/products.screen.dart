@@ -17,7 +17,7 @@ class Products extends StatelessWidget {
           child: AppBarWibget(
             currentIndex: 10,
             onPressLeading: () {
-              Get.toNamed(AppRoutes.homepageScreen);
+              Get.back();
             },
             bgColor: AppColors.bgColor,
           )),
@@ -35,8 +35,9 @@ class Products extends StatelessWidget {
               alignment: Alignment.topLeft,
               children: [
                 Container(
-                  padding:
-                      const EdgeInsets.all( 5.0,),
+                  padding: EdgeInsets.all(
+                    5.0.w,
+                  ),
                   color: AppColors.cardBg,
                   // height:
                   //     MediaQuery.of(context).size.width < 450 ? 250.h : 350.h,
@@ -59,7 +60,7 @@ class Products extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 10.h,
+                        height: 5.h,
                       ),
                       InkWell(
                         onTap: () {
@@ -85,7 +86,6 @@ class Products extends StatelessWidget {
                               Shadow(
                                 blurRadius: 2.0,
                                 color: AppColors.secondryColor,
-                                offset: Offset(0.0, 0.0),
                               ),
                             ],
                           )),

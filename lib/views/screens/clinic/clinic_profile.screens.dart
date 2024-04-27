@@ -9,15 +9,17 @@ class ClinicProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment:Get.locale!.languageCode == "ar"?  Alignment.topRight : Alignment.topLeft,
-      children: [
-        Scaffold(
-          backgroundColor: AppColors.primaryColor,
-          body: SafeArea(
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Container(
+    return Scaffold(
+      backgroundColor: AppColors.primaryColor,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Stack(
+            alignment: Get.locale!.languageCode == "ar"
+                ? Alignment.topRight
+                : Alignment.topLeft,
+            children: [
+              Container(
                 margin: const EdgeInsets.only(top: 25.0),
                 child: Stack(
                   alignment: Alignment.topCenter,
@@ -145,11 +147,13 @@ class ClinicProfile extends StatelessWidget {
                                   child: const Icon(Icons.location_on_outlined,
                                       color: AppColors.primaryColor),
                                 ),
-                                title: Text("25 ش ابن السراج متفرع من وينجت",
-                                    style: TextStyle(
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.blackColor)),
+                                title: Text(
+                                  "25 ش ابن السراج متفرع من وينجت",
+                                  style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: AppColors.blackColor),
+                                ),
                               ),
                               const Divider(
                                 color: AppColors.borderLine,
@@ -211,42 +215,43 @@ class ClinicProfile extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Positioned(
+                        top: -150,
+                        left: -290,
+                        child: Container(
+                          //  color: AppColors.borderLine ,
+                          width: 410.w,
+                          height: 350.h,
+
+                          decoration: BoxDecoration(
+                            color: AppColors.whiteColor.withOpacity(0.2),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(150),
+                            ),
+                          ),
+                        )),
+
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 20.0, right: 20, left: 20),
+                      child: IconButton(
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.homepageScreen);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          color: AppColors.whiteColor,
+                        ),
+                      ),
+                    ),
+                    // )
                   ],
                 ),
               ),
-            ),
+            ],
           ),
         ),
-        Positioned(
-            top: -150,
-            left: -290,
-            child: Container(
-              //  color: AppColors.borderLine ,
-              width: 410.w,
-              height: 350.h,
-
-              decoration: BoxDecoration(
-                color: AppColors.whiteColor.withOpacity(0.2),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(150),
-                ),
-              ),
-            )),
-         
-          Padding(
-            padding: const EdgeInsets.only(top:20.0,right: 20,left: 20),
-            child: IconButton(
-              onPressed: () {
-                Get.toNamed(AppRoutes.homepageScreen);
-              },
-              icon: const Icon(
-                Icons.arrow_back,
-                color: AppColors.whiteColor,
-              ),
-            ),
-          ),
-        // )
-      ],
+      ),
     );
   }
 }

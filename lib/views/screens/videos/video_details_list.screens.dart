@@ -12,118 +12,131 @@ class VideoDetailsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60.0),
-          child: AppBarWibget(currentIndex: 5, bgColor:AppColors.appBg,
-)),
-      body:  SingleChildScrollView(
-        child: Column(
-        
-          children: [
-             
-            Stack(
-              children: [
-                Column(
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(60.0),
+            child: AppBarWibget(
+              currentIndex: 5,
+              bgColor: AppColors.appBg,
+            )),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
                 children: [
-                    SizedBox(
-                  height: 10.h,
-                ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      
-                      Text("  ${'specialcourse'.tr} ${'title1'.tr} ",
-                          style: TextStyle(
-                              fontFamily: "ArefRuqaa",
-                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:16.sp,
-                              color: AppColors.blackColor)),
+                  Column(
+                    children: [
                       SizedBox(
-                        width: 10.w,
+                        height: 10.h,
                       ),
-                     
-                          InkWell(
-                        child: Image.asset(
-                          ImagesPath.icShare,
-                          width: 20.w,
-                          height: 30.h,
-                          fit: BoxFit.fill,
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("  ${'specialcourse'.tr} ${'title1'.tr} ",
+                                style: TextStyle(
+                                    fontFamily: "ArefRuqaa",
+                                    fontSize: Get.locale!.languageCode == "ar"
+                                        ? 20.sp
+                                        : 16.sp,
+                                    color: AppColors.blackColor)),
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: Image.asset(
+                                ImagesPath.icShare,
+                                width: 20.w,
+                                height: 30.h,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.share_outlined,
+                                  color: AppColors.primaryColor,
+                                  size: 30.sp,
+                                )),
+                          ]),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      const Divider(
+                        color: AppColors.secondryColor,
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      SizedBox(
+                        height: context.screenHeight - 150.h,
+                        child: ListView.builder(
+                          //    scrollDirection: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          padding: const EdgeInsets.all(8),
+                          itemCount: 10,
+                          itemBuilder: (BuildContext context, int index) =>
+                              VideosWidget(
+                            image: ImagesPath.video,
+                            title: 'title2'.tr,
+                            time: '1س و 36د',
+                            view: '2.4k',
+                            date: '6 ${'months'.tr} ',
+                            onPress: () {
+                              Get.toNamed(AppRoutes.videoDetails);
+                            },
+                          ),
                         ),
                       ),
-                      
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                       IconButton(
-                          onPressed: () {},
-                          icon:  Icon(
-                            Icons.share_outlined,
-                            color: AppColors.primaryColor,
-                            size: 30.sp,
-                          )),
-                    ]),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                const Divider(
-                  color: AppColors.secondryColor,
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                SizedBox(
-                  height: context.screenHeight-150.h,
-                  child: ListView.builder(
-                //    scrollDirection: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                                padding: const EdgeInsets.all(8),
-                                itemCount: 10,
-                                itemBuilder: (BuildContext context, int index) => VideosWidget(
-                      image: ImagesPath.video,
-                      title: 'title2'.tr,
-                      time: '1س و 36د',
-                      view: '2.4k',
-                      date: '6 ${'months'.tr} ',
-                      onPress: () {  Get.toNamed(AppRoutes.videoDetails);},
-                    ),
+                    ],
                   ),
-                ),
-                      
-                          ],
-                        ),
                   Positioned(
                     bottom: 0,
-                //    top: context.screenHeight-50,
-                    child: 
-                Row(
+                    //    top: context.screenHeight-50,
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                             CustomButton(title:" ${'subscribe'.tr} - 99.99 EGP ${'monthly'.tr}",width: context.screenWidth-40.w,height: 50.h,radius: 10,onPress:  () { Get.toNamed( AppRoutes.homepageScreen);},)
-                    
-                        ],  ), 
-                  )      
-              ],
-            ),
-          
-            
-          ],
+                      children: [
+                        CustomButton(
+                          title:
+                              " ${'subscribe'.tr} - 99.99 EGP ${'monthly'.tr}",
+                          width: context.screenWidth - 40.w,
+                          height: 50.h,
+                          radius: 10,
+                          onPress: () {
+                            Get.toNamed(AppRoutes.homepageScreen);
+                          },
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
-    
-      // CustomButton(title:"اشترك الآن- 99.99 EGP شهريا",width: context.screenWidth-50.w,height: 50.h,radius: 10,onPress:  () {Navigator.pushNamed(context, AppRoutes.videoDetailsList);},)
 
-      // other properties...
-    
-//       bottomSheet:  
-      
-//       Container(
-//         height: 100,
-// padding: EdgeInsets.all(0),
-//         child: 
-//                         CustomButton(title:"متابعة",width: context.screenWidth-50.w,height: 50.h,radius: 10,onPress:  () {Navigator.pushNamed(context, AppRoutes.videoDetailsList);},)
-                   
-//       ),
+        // CustomButton(title:"اشترك الآن- 99.99 EGP شهريا",width: context.screenWidth-50.w,height: 50.h,radius: 10,onPress:  () {Navigator.pushNamed(context, AppRoutes.videoDetailsList);},)
+
+        // other properties...
+
+        //       bottomSheet:
+
+        //       Container(
+        //         height: 100,
+        // padding: EdgeInsets.all(0),
+        //         child:
+        //                         CustomButton(title:"متابعة",width: context.screenWidth-50.w,height: 50.h,radius: 10,onPress:  () {Navigator.pushNamed(context, AppRoutes.videoDetailsList);},)
+
+        //       ),
+      ),
     );
   }
 }

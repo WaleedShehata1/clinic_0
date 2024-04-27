@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 
 import 'package:clinic/controller/onboarding_controller.dart';
 import 'package:clinic/core/consts/consts.dart';
@@ -10,15 +11,14 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(OnBoardingControllerImp()) ;
-    return  Scaffold(
+    Get.put(OnBoardingControllerImp());
+    return const Scaffold(
         backgroundColor: AppColors.bgColor,
         body: SafeArea(
           child: Column(children: [
             Expanded(
               child: CustomSliderOnBoarding(),
             ),
-           
           ]),
         ));
   }

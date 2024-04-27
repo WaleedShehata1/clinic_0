@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:clinic/controller/auth/signup.controller.dart';
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/core/functions/alertexitapp.dart';
@@ -35,7 +37,9 @@ class _SignUpState extends State<SignUp> {
                     text: "signup".tr,
                   ),
                   Stack(
-                    alignment:Get.locale!.languageCode == "ar"? Alignment.bottomLeft :Alignment.bottomRight,
+                    alignment: Get.locale!.languageCode == "ar"
+                        ? Alignment.bottomLeft
+                        : Alignment.bottomRight,
                     children: [
                       SizedBox(height: 10.h),
                       Icon(
@@ -104,7 +108,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   Text("gender".tr,
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16.sp)),
+                          fontWeight: FontWeight.w800, fontSize: 16.sp)),
                   SizedBox(
                     height: 5.h,
                   ),
@@ -115,7 +119,10 @@ class _SignUpState extends State<SignUp> {
                         width: MediaQuery.of(context).size.width / 2.6,
                         child: ListTile(
                           title: Text('male'.tr,
-                              style: TextStyle(fontSize: 16.sp)),
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w800,
+                              )),
                           leading: Radio<int>(
                             activeColor: AppColors.primaryColor,
                             value: 1,
@@ -132,7 +139,10 @@ class _SignUpState extends State<SignUp> {
                         width: MediaQuery.of(context).size.width / 2.6,
                         child: ListTile(
                           title: Text('female'.tr,
-                              style: TextStyle(fontSize: 16.sp)),
+                              style: TextStyle(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w800,
+                              )),
                           leading: Radio<int>(
                             activeColor: AppColors.primaryColor,
                             focusColor: AppColors.primaryColor,
@@ -154,7 +164,7 @@ class _SignUpState extends State<SignUp> {
                       onPressed: () {
                         controller.signUp();
                       }),
-                  const SizedBox(height: 30),
+                  //
                 ]),
               ),
             );

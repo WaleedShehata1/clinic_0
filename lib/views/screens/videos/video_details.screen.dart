@@ -12,9 +12,12 @@ class VideoDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60.0),
-          child: AppBarWibget(currentIndex: 5, bgColor:AppColors.appBg,)),
+      appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(60.0),
+          child: AppBarWibget(
+            currentIndex: 5,
+            bgColor: AppColors.appBg,
+          )),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -23,38 +26,37 @@ class VideoDetails extends StatelessWidget {
             SizedBox(
               height: 5.h,
             ),
-             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      
-                      Text("  ${'specialcourse'.tr}  ${'title1'.tr}",
-                          style: TextStyle(
-                              fontFamily: "ArefRuqaa",
-                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:16.sp,
-                              color: AppColors.blackColor)),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                     
-                          InkWell(
-                        child: Image.asset(
-                          ImagesPath.icShare,
-                          width: 20.w,
-                          height: 30.h,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                       IconButton(
-                          onPressed: () {},
-                          icon:  Icon(
-                            Icons.share_outlined,
-                            color: AppColors.primaryColor,
-                            size: 30.sp,
-                          )),
-                    ]),
-                     SizedBox(
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text("  ${'specialcourse'.tr}  ${'title1'.tr}",
+                  style: TextStyle(
+                      fontFamily: "ArefRuqaa",
+                      fontSize:
+                          Get.locale!.languageCode == "ar" ? 20.sp : 16.sp,
+                      color: AppColors.blackColor)),
+              SizedBox(
+                width: 10.w,
+              ),
+              InkWell(
+                onTap: () {},
+                child: Image.asset(
+                  ImagesPath.icShare,
+                  width: 20.w,
+                  height: 30.h,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.share_outlined,
+                    color: AppColors.primaryColor,
+                    size: 30.sp,
+                  )),
+            ]),
+            SizedBox(
               height: 5.h,
             ),
             const Divider(
@@ -64,9 +66,11 @@ class VideoDetails extends StatelessWidget {
               height: 5.h,
             ),
             Align(
-              alignment:Get.locale!.languageCode == "ar"? Alignment.centerRight: Alignment.centerLeft,
+              alignment: Get.locale!.languageCode == "ar"
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.only(right: 20.w,left: 20.w),
+                padding: EdgeInsets.only(right: 20.w, left: 20.w),
                 child: Text('Whatwillyoulearn'.tr,
                     style: TextStyle(
                         fontSize: 20.sp,
@@ -79,7 +83,9 @@ class VideoDetails extends StatelessWidget {
               children: List.generate(
                   3,
                   (index) => Directionality(
-                        textDirection: Get.locale!.languageCode == "ar"? TextDirection.rtl:TextDirection.ltr,
+                        textDirection: Get.locale!.languageCode == "ar"
+                            ? TextDirection.rtl
+                            : TextDirection.ltr,
                         child: ListTile(
                           title: Text(
                               "  لوريم إيبسوم طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط ، دون الاعتماد على محتوى ذي معنى. ",
@@ -101,9 +107,11 @@ class VideoDetails extends StatelessWidget {
               height: 5.h,
             ),
             Align(
-              alignment:Get.locale!.languageCode == "ar"? Alignment.centerRight: Alignment.centerLeft,
+              alignment: Get.locale!.languageCode == "ar"
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.only(right: 20.w ,left: 20.w),
+                padding: EdgeInsets.only(right: 20.w, left: 20.w),
                 child: Text("thisCourseInclude".tr,
                     style: TextStyle(
                         fontSize: 20.sp,
@@ -115,43 +123,41 @@ class VideoDetails extends StatelessWidget {
               height: 5.h,
             ),
             Padding(
-                padding: EdgeInsets.only(right: 20.w,left: 20.w),
+                padding: EdgeInsets.only(right: 20.w, left: 20.w),
                 child: Row(
                   //mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                      Icon(
+                    Icon(
                       Icons.access_time,
                       color: AppColors.blackColor,
                       size: 18.sp,
                     ),
-                     SizedBox(
+                    SizedBox(
                       width: 10.w,
                     ),
-                    Text(" ${"hour".tr} 38 ${"and".tr} ${"min".tr}/45 ${"video".tr}",
-                  //  textDirection:TextDirection.rtl ,
+                    Text(
+                        " ${"hour".tr} 38 ${"and".tr} ${"min".tr}/45 ${"video".tr}",
+                        //  textDirection:TextDirection.rtl ,
                         style: TextStyle(
                             fontSize: 14.sp,
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.w700)),
-                   
-                  
                   ],
-                )
-                ),
-                  SizedBox(
+                )),
+            SizedBox(
               height: 10.h,
             ),
             Padding(
-                padding: EdgeInsets.only(right: 20.w,left: 20.w),
+                padding: EdgeInsets.only(right: 20.w, left: 20.w),
                 child: Row(
-               //   mainAxisAlignment: MainAxisAlignment.end,
+                  //   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Icon(
                       Icons.calendar_today_outlined,
                       color: AppColors.blackColor,
                       size: 18.sp,
                     ),
-                     SizedBox(
+                    SizedBox(
                       width: 10.w,
                     ),
                     Text("${"productionDate".tr} :31/12/2023",
@@ -159,43 +165,45 @@ class VideoDetails extends StatelessWidget {
                             fontSize: 14.sp,
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.w700)),
-                   
-                    
                   ],
                 )),
-                  SizedBox(
+            SizedBox(
               height: 10.h,
             ),
             Padding(
-                padding: EdgeInsets.only(right: 20.w,left: 20.w),
+                padding: EdgeInsets.only(right: 20.w, left: 20.w),
                 child: Row(
-                //  mainAxisAlignment: MainAxisAlignment.end,
+                  //  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                              Image.asset(
-                  ImagesPath.icCertifiy,
-                  width: 20.w,
-                  height: 20.h,
-                  fit: BoxFit.fill,
-                ),
+                    Image.asset(
+                      ImagesPath.icCertifiy,
+                      width: 20.w,
+                      height: 20.h,
+                      fit: BoxFit.fill,
+                    ),
                     SizedBox(
                       width: 10.w,
                     ),
-                    
                     Text('courseCompletionCertificate'.tr,
                         style: TextStyle(
                             fontSize: 14.sp,
                             color: const Color.fromRGBO(0, 112, 205, 1),
                             fontWeight: FontWeight.w700)),
-                
                   ],
                 )),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    CustomButton(title:"continue".tr,width: context.screenWidth/3,radius: 40,onPress:  () { Get.toNamed(AppRoutes.videoDetailsList);},)
-
-                  ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                CustomButton(
+                  title: "continue".tr,
+                  width: context.screenWidth / 3,
+                  radius: 40,
+                  onPress: () {
+                    Get.toNamed(AppRoutes.videoDetailsList);
+                  },
                 )
+              ],
+            )
           ],
         ),
       ),

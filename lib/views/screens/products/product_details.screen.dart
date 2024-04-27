@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../clinic_profile/clinic_profile.dart';
+
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
 
@@ -15,9 +17,9 @@ class ProductDetails extends StatelessWidget {
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60.0),
           child: AppBarWibget(
-            currentIndex: 11,
+            currentIndex: 12,
             onPressLeading: () {
-              Get.toNamed(AppRoutes.homepageScreen);
+              Navigator.pop(context);
             },
             bgColor: AppColors.secondryColor,
           )),
@@ -198,83 +200,94 @@ class ProductDetails extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width - 50,
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(vertical: 10),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                      color: AppColors.primaryColor, width: 1)),
-                              child: Column(
-                                children: [
-                                  Row(children: [
-                                    Text(
-                                      "${"pharmacyInfo".tr}:",
-                                      style: TextStyle(
-                                          fontSize: 15.sp,
-                                          fontWeight: FontWeight.bold,
-                                          color: AppColors.primaryColor),
-                                    )
-                                  ]),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Row(children: [
-                                    Text(
-                                      "${"pharmacyName".tr}:  ",
-                                      style: TextStyle(
-                                          fontSize: 15.sp,
-                                          fontWeight: FontWeight.bold,
-                                          color: AppColors.primaryColor),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const ClinicProfilePage2()),
+                            );
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width - 50,
+                                padding: const EdgeInsets.all(10),
+                                margin:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                        color: AppColors.primaryColor,
+                                        width: 1)),
+                                child: Column(
+                                  children: [
+                                    Row(children: [
+                                      Text(
+                                        "${"pharmacyInfo".tr}:",
+                                        style: TextStyle(
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.primaryColor),
+                                      )
+                                    ]),
+                                    SizedBox(
+                                      height: 10.h,
                                     ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 8.0),
-                                        child: Text(
-                                          "Al-Masry Pharmacy".tr,
-                                          style: TextStyle(
-                                              fontSize: 15.sp,
-                                              color: AppColors.blackColor),
-                                        ),
+                                    Row(children: [
+                                      Text(
+                                        "${"pharmacyName".tr}:  ",
+                                        style: TextStyle(
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.primaryColor),
                                       ),
-                                    )
-                                  ]),
-                                  SizedBox(
-                                    height: 5.h,
-                                  ),
-                                  Row(children: [
-                                    Text(
-                                      "${"awayfromyou".tr}:",
-                                      style: TextStyle(
-                                          fontSize: 15.sp,
-                                          fontWeight: FontWeight.bold,
-                                          color: AppColors.primaryColor),
-                                    ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 8.0),
                                           child: Text(
-                                            "30 km".tr,
+                                            "Al-Masry Pharmacy".tr,
                                             style: TextStyle(
                                                 fontSize: 15.sp,
                                                 color: AppColors.blackColor),
                                           ),
                                         ),
+                                      )
+                                    ]),
+                                    SizedBox(
+                                      height: 5.h,
+                                    ),
+                                    Row(children: [
+                                      Text(
+                                        "${"awayfromyou".tr}:",
+                                        style: TextStyle(
+                                            fontSize: 15.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.primaryColor),
                                       ),
-                                    )
-                                  ]),
-                                ],
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 8.0),
+                                          child: Align(
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              "30 km".tr,
+                                              style: TextStyle(
+                                                  fontSize: 15.sp,
+                                                  color: AppColors.blackColor),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ]),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     )),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/consts/images.dart';
-
+import '../../widgets/commponents/custom_botton_icon_or_image.dart';
 
 class ClinicProfileMap extends StatelessWidget {
   const ClinicProfileMap({super.key});
@@ -32,30 +32,33 @@ class ClinicProfileMap extends StatelessWidget {
                   padding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 25, vertical: 50),
                   child: Column(
-
                     children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                      Text(
-                      "Youssef maged",
-                      style: TextStyle(
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w800,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Youssef maged",
+                            style: TextStyle(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          Text(
+                            " . ",
+                            style: TextStyle(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          Text(
+                            "Dr",
+                            style: TextStyle(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),Text(
-                          " . ",
-                          style: TextStyle(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),Text(
-                          "Dr",
-                          style: TextStyle(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),],)  ,
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -76,8 +79,17 @@ class ClinicProfileMap extends StatelessWidget {
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("4.0",style: TextStyle(color:AppColors.fontGrey,fontSize: 22,fontWeight: FontWeight.bold ,),),
-                         SizedBox(width: 5,),
+                          Text(
+                            "4.0",
+                            style: TextStyle(
+                              color: AppColors.fontGrey,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
                           Icon(
                             Icons.star_border,
                             color: Colors.red,
@@ -99,80 +111,131 @@ class ClinicProfileMap extends StatelessWidget {
                             color: Colors.red,
                           ),
                         ],
-                      )  ,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                           Container(
-                             margin: EdgeInsetsDirectional.symmetric(horizontal: 15.w, vertical:10.h),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.primaryColor,width: 2.w),
-                              borderRadius:BorderRadius.circular( 25.r),
+                          CustomBottonIconAndImage(
+                            onTap: () {},
+                            marginvertical: 5.h,
+                            marginHorizontal: 5.w,
+                            padding: 5.w,
+                            withBorder: 2.w,
+                            colorBorder: AppColors.primaryColor,
+                            borderRadius: 25.r,
+                            child: Icon(
+                              Icons.mode_comment_outlined,
+                              size: 25.w,
+                              color: AppColors.primaryColor,
                             ),
-                            child: IconButton(onPressed: (){},icon: Icon(Icons.mode_comment_outlined,color: AppColors.primaryColor,),),
                           ),
+                          CustomBottonIconAndImage(
+                            onTap: () {},
+                            marginvertical: 5.h,
+                            marginHorizontal: 5.w,
+                            padding: 5.w,
+                            withBorder: 2.w,
+                            colorBorder: AppColors.primaryColor,
+                            borderRadius: 25.r,
+                            child: Icon(
+                              Icons.videocam_outlined,
+                              size: 28.w,
+                              color: AppColors.primaryColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
                           Container(
+                            margin: EdgeInsetsDirectional.symmetric(
+                                horizontal: 15.w, vertical: 10.h),
                             decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.primaryColor,width: 2.w),
-                              borderRadius:BorderRadius.circular( 25.r),
+                                borderRadius: BorderRadius.circular(50).r,
+                                border: Border.all(
+                                  color: AppColors.cardBg,
+                                  width: 2.w,
+                                )),
+                            child: Image.asset(
+                              ImagesPath.certificates,
+                              width: 50.w,
                             ),
-                            child: IconButton(onPressed: (){},icon: Icon(Icons.videocam_outlined,color: AppColors.primaryColor,),),
-                          )
-                          ,
-                        ],),
-                      Container(
-                        margin:  EdgeInsetsDirectional.only(top: 5.h),
-                        padding: const EdgeInsetsDirectional.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: const BorderRadiusDirectional.only(
-                                topStart: Radius.circular(15),
-                                topEnd: Radius.circular(15)),
-                            color: Colors.white,
-                            border: Border.all(color: Colors.grey, width: 1)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const Text(
-                              "أرقام التليفونات",
+                          ),
+                          Expanded(
+                            child: Text(
+                              "الشهادات و الخبرات العلمية التي حصلت عليها",
                               style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                              ),
+                                  fontSize: 16.sp, fontWeight: FontWeight.w900),
+                              softWrap: true,
+                              maxLines: 2,
                             ),
-                            const Expanded(child: SizedBox()),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.phone,
-                                  color: AppColors.primaryColor,
-                                ))
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                       Container(
-                        padding: const EdgeInsetsDirectional.all(10),
+                        width: double.infinity,
+                        padding: EdgeInsetsDirectional.all(8.w),
                         decoration: BoxDecoration(
-                            borderRadius: const BorderRadiusDirectional.only(
-                                bottomEnd: Radius.circular(15),
-                                bottomStart: Radius.circular(15)),
-                            color: Colors.white,
-                            border: Border.all(color: Colors.grey, width: 1)),
-                        child: Row(
+                          boxShadow: [
+                            BoxShadow(
+                                color: AppColors.cardBg,
+                                offset: const Offset(0, 5),
+                                spreadRadius: 0.5.r,
+                                blurRadius: 2.r),
+                          ],
+                          borderRadius: BorderRadiusDirectional.circular(15.r),
+                          color: Colors.white,
+                          border: Border.all(
+                            color: AppColors.cardBg,
+                            width: 1.w,
+                          ),
+                        ),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            const Text(
-                              "01507623823",
+                            Text(
+                              "1-دكتوراة جراحة القلب و الصدر في نوفمبر عام 2002.",
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
+                                fontSize: 14.sp,
+                                height: 0.8.h,
+                                fontWeight: FontWeight.w800,
                               ),
                             ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.phone,
-                                  color: AppColors.primaryColor,
-                                ))
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 5.h),
+                              child: Text(
+                                "2-زميل عيادة سان دوناتو في جامعة ميلانو بدولة إيطاليا عام 2007.",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  height: 0.8.h,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "3-ماجستير الجراحة العامة في نوفمبر عام 1997-بتقدير امتياز.",
+                              style: TextStyle(
+                                height: 0.8.h,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "4-م.كلية الطب في جامعة القاهرة في ديسمبر عام 1993-بتقدير امتياز مع مرتبة الشرف.",
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                height: 0.8.h,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Text(
+                              "5-الشهادة العامة للتعليم في إنجلترا/القاهرة في يونيو عام 1987.",
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                height: 0.8.h,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -180,58 +243,107 @@ class ClinicProfileMap extends StatelessWidget {
                         height: 20,
                       ),
                       Container(
-                        padding: const EdgeInsetsDirectional.all(10),
+                        width: double.infinity,
+                        padding: EdgeInsetsDirectional.all(8.w),
                         decoration: BoxDecoration(
-                            borderRadius: const BorderRadiusDirectional.only(
-                                topStart: Radius.circular(15),
-                                topEnd: Radius.circular(15)),
-                            color: Colors.white,
-                            border: Border.all(color: Colors.grey, width: 1)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const Text(
-                              "25 ش ابن السراج متفرع من وينجت",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.phone,
-                                  color: AppColors.primaryColor,
-                                ))
+                          boxShadow: [
+                            BoxShadow(
+                                color: AppColors.cardBg,
+                                offset: const Offset(0, 5),
+                                spreadRadius: 0.5.r,
+                                blurRadius: 2.r),
                           ],
+                          borderRadius: BorderRadiusDirectional.circular(15.r),
+                          color: Colors.white,
+                          border: Border.all(
+                            color: AppColors.cardBg,
+                            width: 1.w,
+                          ),
                         ),
-                      ),
-                      Container(
-                        padding: const EdgeInsetsDirectional.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: const BorderRadiusDirectional.only(
-                                bottomEnd: Radius.circular(15),
-                                bottomStart: Radius.circular(15)),
-                            color: Colors.white,
-                            border: Border.all(color: Colors.grey, width: 1)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const Text(
-                              "من 10 ص الي 12 م",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.phone,
+                        child: Column(children: [
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsetsDirectional.symmetric(
+                                    horizontal: 5.w),
+                                padding: EdgeInsetsDirectional.all(5.w),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15.r),
+                                    border: Border.all(
+                                      width: 1.w,
+                                      color: AppColors.cardBg,
+                                    )),
+                                child: Icon(
+                                  Icons.account_balance_wallet_outlined,
                                   color: AppColors.primaryColor,
-                                ))
-                          ],
-                        ),
+                                  size: 25.w,
+                                ),
+                              ),
+                              Expanded(
+                                child: Text(
+                                  "أسعار و أيام  الكشف في العيادة  ",
+                                  style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w900),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin:
+                                EdgeInsetsDirectional.symmetric(vertical: 5.h),
+                            width: double.infinity,
+                            height: 1.h,
+                            color: Color.fromARGB(255, 226, 224, 224),
+                          ),
+                          Row(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "كشف عادي:",
+                                    style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: AppColors.primaryColor,
+                                    ),
+                                  ),
+                                  Text(
+                                    "كشف مستعجل:",
+                                    style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: AppColors.primaryColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    "300 ج",
+                                    style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                  Text(
+                                    "450ج",
+                                    style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        ]),
                       ),
                     ],
                   ),
@@ -251,7 +363,7 @@ class ClinicProfileMap extends StatelessWidget {
           ),
         ),
         Transform.translate(
-          offset: const Offset(0, 80),
+          offset: const Offset(-10, 88),
           child: Container(
             width: 120,
             height: 100,
@@ -264,6 +376,36 @@ class ClinicProfileMap extends StatelessWidget {
               height: 200.h,
               fit: BoxFit.fitHeight,
             ),
+          ),
+        ),
+        Transform.translate(
+          offset: const Offset(-10, 62),
+          child: Container(
+              alignment: Alignment.topCenter,
+              margin: EdgeInsetsDirectional.only(bottom: 10.h),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(25)),
+              child: Text(
+                "Cardiology and thoracology",
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  color: AppColors.whiteColor,
+                  fontWeight: FontWeight.w500,
+                  wordSpacing: 2,
+                  letterSpacing: 1,
+                ),
+                maxLines: 1,
+              )),
+        ),
+        Transform.translate(
+          offset: Offset(-150.w, 20.h),
+          child: IconButton(
+            icon: Icon(
+              Icons.arrow_right_alt,
+              color: AppColors.whiteColor,
+              size: 30.w,
+            ),
+            onPressed: () => Navigator.pop(context),
           ),
         ),
       ]),

@@ -10,7 +10,12 @@ class CustomButton extends StatelessWidget {
   final String? title;
   final Function()? onPress;
   CustomButton(
-      {super.key, this.width,this.height, this.radius, this.title, this.onPress});
+      {super.key,
+      this.width,
+      this.height,
+      this.radius,
+      this.title,
+      this.onPress});
 
   @override
   Widget build(BuildContext context) {
@@ -20,28 +25,24 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       onTap: onPress,
       child: Container(
-        margin: EdgeInsets.all(20.w),
-        width: width != null? width:context.screenWidth-50,
-        height: height ,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius!),
-                color: AppColors.secondryColor,
-      
-        ),
-        padding: const EdgeInsets.all(10),
-        
-      
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                title!,
-                style: TextStyle(
-                    color: AppColors.whiteColor,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16),
-              ),
-            )
-      ),
+          margin: EdgeInsets.all(20.w),
+          width: width != null ? width : context.screenWidth - 50,
+          height: height,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(radius!),
+            color: AppColors.secondryColor,
+          ),
+          padding: const EdgeInsets.all(10),
+          child: Align(
+            alignment: Alignment.center,
+            child: Text(
+              title!,
+              style: const TextStyle(
+                  color: AppColors.whiteColor,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16),
+            ),
+          )),
     );
   }
 }

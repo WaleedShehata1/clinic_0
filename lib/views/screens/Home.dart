@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/screens/clinic/clinic_services.screens.dart';
 import 'package:clinic/views/screens/clinic/text.dart';
@@ -47,13 +49,13 @@ class _HomeState extends State<Home> {
         ),
         //icon: SvgPicture.asset(ImagesPath.pharmacyIc),
         label: "pharmacy".tr),
-    BottomNavigationBarItem(
-        icon: const Icon(
-          Icons.home_work_outlined,
-          //    size: 20,
-        ),
-        //icon: SvgPicture.asset(ImagesPath.visitingsIc),
-        label: "visitings".tr),
+    // BottomNavigationBarItem(
+    //     icon: const Icon(
+    //       Icons.home_work_outlined,
+    //       //    size: 20,
+    //     ),
+    //     //icon: SvgPicture.asset(ImagesPath.visitingsIc),
+    //     label: "visitings".tr),
     BottomNavigationBarItem(
       icon: SvgPicture.asset(ImagesPath.icEdu),
       label: "educationalWed".tr,
@@ -67,15 +69,13 @@ class _HomeState extends State<Home> {
     const ClinicServices(),
     const MyWidget(),
     const OnlineShop(),
-    const MyWidget(),
     const VideosList()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgColor,
-
-      appBar:  PreferredSize(
+      appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60.0),
           child: AppBarWibget(
             currentIndex: _currentIndex,

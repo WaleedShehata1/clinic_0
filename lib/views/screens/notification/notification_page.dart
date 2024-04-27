@@ -1,9 +1,9 @@
-import 'package:clinic/views/screens/clinic/clinic_profile.screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../widgets/commponents/card_notification.dart';
+import '../clinic_profile/clinic_profile.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -52,7 +52,10 @@ class NotificationPage extends StatelessWidget {
             ),
           ),
           InkWell(
-              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_){return const ClinicProfile();})),
+              onTap: () =>
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return const ClinicProfilePage2();
+                  })),
               child: cardNotification()),
           cardNotification(),
           cardNotification(),

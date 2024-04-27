@@ -1,5 +1,5 @@
-import 'package:clinic/views/widgets/files/persontab1.widgets.dart';
-import 'package:clinic/views/widgets/files/persontab2.widgets.dart';
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/cupertino.dart';
 import 'package:clinic/core/classes/status_request.dart';
 import 'package:clinic/core/consts/consts.dart';
@@ -117,15 +117,14 @@ class PersonFileControllerImp extends PersonFileController {
     throw UnimplementedError();
   }
 
-  
   @override
   next() {
     currentPage++;
-   pageController.animateToPage(currentPage,
-          duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
-   
+    pageController.animateToPage(currentPage,
+        duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
+
     // if (currentPage > tabs.length-1) {
-    //    Get.toNamed(AppRoutes.homepageScreen) ; 
+    //    Get.toNamed(AppRoutes.homepageScreen) ;
     // } else {
     //   pageController.animateToPage(currentPage,
     //       duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
@@ -137,7 +136,6 @@ class PersonFileControllerImp extends PersonFileController {
     currentPage = index;
     update();
   }
-
 
   // @override
   // next() {
@@ -157,12 +155,12 @@ class PersonFileControllerImp extends PersonFileController {
   //     // }
 
   //      if (currentPage > 1) {
-  //      Get.to(AppRoutes.homepageScreen) ; 
+  //      Get.to(AppRoutes.homepageScreen) ;
   //   } else {
   //     pageController.animateToPage(currentPage,
   //         duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
   //   }
-    
+
   // }
 
   // @override
@@ -180,7 +178,6 @@ class PersonFileControllerImp extends PersonFileController {
 
   //        currentPage = index;
 
-  
   // }
 
   // @override

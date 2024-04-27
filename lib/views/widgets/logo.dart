@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +20,7 @@ class logoWidget extends StatelessWidget {
           width: 60,
           fit: BoxFit.fill,
         ),
-        SizedBox(
+        const SizedBox(
             // width: 5.w,
             ),
         Text("عيادة".tr,

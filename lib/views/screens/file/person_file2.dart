@@ -17,14 +17,14 @@ class PersonFile2 extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.bgColor,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(kToolbarHeight),
-          child:AppBarSimpleWibget(onPressLeading: () => Get.back(),)
-           ),
-        body: SafeArea(
-            child: GetBuilder<PersonFileTwoControllerImp>(builder: (controller) {
-          return 
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+            preferredSize: const Size.fromHeight(kToolbarHeight),
+            child: AppBarSimpleWibget(
+              onPressLeading: () => Get.back(),
+            )),
+        body: SafeArea(child:
+            GetBuilder<PersonFileTwoControllerImp>(builder: (controller) {
+          return Container(
+            padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 30.w),
             child: Form(
               key: controller.formstate,
               child: ListView(shrinkWrap: true, children: [
@@ -161,7 +161,7 @@ class PersonFile2 extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       width: MediaQuery.of(context).size.width / 2.8,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -169,7 +169,7 @@ class PersonFile2 extends StatelessWidget {
                       child: Align(
                           alignment: Alignment.centerLeft,
                           child: IconButton(
-                            icon:  Icon(
+                            icon: Icon(
                               Icons.upload_file_outlined,
                               color: AppColors.primaryColor,
                               size: 25.sp,

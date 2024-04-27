@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: unused_local_variable
+
 import 'package:clinic/core/classes/status_request.dart';
 import 'package:clinic/core/consts/consts.dart';
-import 'package:clinic/core/functions/handingData.dart';
-import 'package:clinic/data/datasource/remote/auth/signup_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:overlay_kit/overlay_kit.dart';
@@ -60,23 +59,22 @@ class SignUpControllerImp extends SignUpController {
       }
     } else {
       OverlayLoadingProgress.stop();
-       Get.snackbar("alert".tr,
-               "errorRepassword".tr,
-               icon: const Icon(
-                              Icons.lock,
-                              color: AppColors.primaryColor,
-                             
-                            ),
-               snackPosition: SnackPosition.BOTTOM,
-               backgroundColor: AppColors.primaryColor,
-               borderRadius: 20,
-               margin: const EdgeInsets.all(15),
-               colorText: AppColors.whiteColor,
-               duration: const Duration(seconds: 4),
-               isDismissible: true,
-               forwardAnimationCurve: Curves.easeOutBack,
-
-                  );
+      Get.snackbar(
+        "alert".tr,
+        "errorRepassword".tr,
+        icon: const Icon(
+          Icons.lock,
+          color: AppColors.primaryColor,
+        ),
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: AppColors.primaryColor,
+        borderRadius: 20,
+        margin: const EdgeInsets.all(15),
+        colorText: AppColors.whiteColor,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
     }
   }
 

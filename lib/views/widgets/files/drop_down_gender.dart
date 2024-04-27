@@ -1,8 +1,9 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
+
 import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 
 class GenderDropdown extends StatefulWidget {
   @override
@@ -27,9 +28,8 @@ class _GenderDropdownState extends State<GenderDropdown> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        
         Container(
-         width:  MediaQuery.of(context).size.width / 2,
+          width: MediaQuery.of(context).size.width / 2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
             border: Border.all(color: AppColors.primaryColor, width: 2.w),
@@ -50,7 +50,7 @@ class _GenderDropdownState extends State<GenderDropdown> {
             // borderRadius: BorderRadius.circular(15),
             iconSize: 30,
             //dropdownColor: AppColors.primary,
-          
+
             value: _selectedGenderType,
             onChanged: (newValue) {
               setState(() {
@@ -62,7 +62,10 @@ class _GenderDropdownState extends State<GenderDropdown> {
                 value: value,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(value,style: TextStyle(fontSize: 20.sp),),
+                  child: Text(
+                    value,
+                    style: TextStyle(fontSize: 20.sp),
+                  ),
                 ),
               );
             }).toList(),

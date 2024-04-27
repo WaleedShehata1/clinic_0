@@ -1,8 +1,8 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/cupertino.dart';
 import 'package:clinic/core/classes/status_request.dart';
 import 'package:clinic/core/consts/consts.dart';
-import 'package:clinic/core/functions/handingData.dart';
-import 'package:clinic/data/datasource/remote/auth/signup_data.dart';
 import 'package:get/get.dart';
 import 'package:overlay_kit/overlay_kit.dart';
 
@@ -15,7 +15,6 @@ class CompanyFileControllerImp extends CompanyFileController {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController nationalId;
   late TextEditingController email;
-
 
   // SignupData signupData = SignupData(Get.find());
 
@@ -62,15 +61,15 @@ class CompanyFileControllerImp extends CompanyFileController {
   @override
   void onInit() {
     nationalId = TextEditingController();
-  
+
     super.onInit();
   }
 
   @override
   void dispose() {
-  //  email.dispose();
+    //  email.dispose();
     nationalId.dispose();
-  
+
     super.dispose();
   }
 }

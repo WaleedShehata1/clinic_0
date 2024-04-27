@@ -14,15 +14,14 @@ class CustomButtonIntro extends GetView<OnBoardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 30.h),
-      width: MediaQuery.of(context).size.width - 100.w,
+      margin: EdgeInsets.only(bottom: 20.h),
+      width: 200.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
         color: bgColor,
       ),
       child: MaterialButton(
-          padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height < 500 ? 5.h : 20.h),
+          padding: EdgeInsets.symmetric(vertical: 10.h),
           textColor: AppColors.whiteColor,
           onPressed: onPressed,
           child: Text(
