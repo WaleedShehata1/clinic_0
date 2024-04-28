@@ -9,8 +9,6 @@ import 'package:get/get.dart';
 
 class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
   const CustomSliderOnBoarding({Key? key}) : super(key: key);
-  // var localeController = Get.find<LocaleController>();
-  //var local = localeController.checkLang;
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
@@ -21,7 +19,6 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
         itemCount: onBoardingList.length,
         itemBuilder: (context, i) => SingleChildScrollView(
               child: Stack(
-                // alignment: Alignment.topCenter,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,8 +40,8 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                               child: Text(
                                 'skip'.tr,
                                 style: TextStyle(
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 17.sp,
+                                  fontWeight: FontWeight.w800,
                                 ),
                               ),
                               onTap: () {
@@ -58,9 +55,9 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                       Text(onBoardingList[i].title!,
                           style: TextStyle(
                               color: AppColors.blackColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22.sp)),
-                      SizedBox(height: 10.h),
+                              fontWeight: FontWeight.w900,
+                              fontSize: 26.sp)),
+
                       Container(
                           padding: EdgeInsets.symmetric(horizontal: 10.w),
                           constraints: BoxConstraints(minHeight: 150.h),
@@ -72,6 +69,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                             style: TextStyle(
                                 //height: 2,
                                 color: AppColors.blackColor,
+                                fontWeight: FontWeight.w700,
                                 fontSize: 18.sp),
                           )),
                       //  Spacer(),
@@ -80,9 +78,9 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                   ),
                   Positioned(
                     left: MediaQuery.of(context).size.width / 3 + 20,
-                    child: const Padding(
-                        padding: EdgeInsets.only(top: 50.0),
-                        child: logoWidget()),
+                    child: Padding(
+                        padding: EdgeInsets.only(top: 70.0.h),
+                        child: const logoWidget()),
                   )
                 ],
               ),

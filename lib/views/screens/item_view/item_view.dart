@@ -12,21 +12,25 @@ class ItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.secondryColor,
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60.0),
-          child: AppBarWibget(
-            currentIndex: 12,
-            onPressLeading: () {
-              Navigator.pop(context);
-            },
-            bgColor: AppColors.secondryColor,
-          )),
+        preferredSize: const Size.fromHeight(60.0),
+        child: AppBarWibget(
+          currentIndex: 12,
+          onPressLeading: () {
+            Navigator.pop(context);
+          },
+          bgColor: AppColors.secondryColor,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Stack(alignment: AlignmentDirectional.topCenter, children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            color: const Color(0xffFF0000),
+            height: MediaQuery.of(context).size.height - 75.h,
+            decoration: const BoxDecoration(
+              color: AppColors.secondryColor,
+            ),
             child: Column(
               children: [
                 SizedBox(
@@ -56,7 +60,7 @@ class ItemView extends StatelessWidget {
                                   "Price after discount: 250 EGP".tr,
                                   style: TextStyle(
                                     color: Colors.red,
-                                    fontSize: 15.sp,
+                                    fontSize: 16.2.sp,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
@@ -84,7 +88,7 @@ class ItemView extends StatelessWidget {
                               padding: EdgeInsetsDirectional.only(
                                   top: 5.h,
                                   bottom: 5.h,
-                                  start: (66).w,
+                                  start: (50).w,
                                   end: 10.w),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10).r,

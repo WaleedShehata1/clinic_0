@@ -18,7 +18,7 @@ class VideoDetailsList extends StatelessWidget {
         appBar: const PreferredSize(
             preferredSize: Size.fromHeight(60.0),
             child: AppBarWibget(
-              currentIndex: 5,
+              currentIndex: 4,
               bgColor: AppColors.appBg,
             )),
         body: SingleChildScrollView(

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../clinic_profile/clinic_profile.dart';
+
 class Products extends StatelessWidget {
   const Products({super.key});
 
@@ -27,8 +29,8 @@ class Products extends StatelessWidget {
           axisCount: MediaQuery.of(context).size.width < 450
               ? GridLayoutEnum.threeElementsInRow
               : GridLayoutEnum.fourElementsInRow,
-          crossAxisSpacing: 7,
-          mainAxisSpacing: 4,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 7,
           children: List.generate(
             20,
             (index) => Stack(
@@ -36,20 +38,18 @@ class Products extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.all(
-                    5.0.w,
+                    5.w,
                   ),
                   color: AppColors.cardBg,
-                  // height:
-                  //     MediaQuery.of(context).size.width < 450 ? 250.h : 350.h,
                   width: 120.w,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.productDetails);
-                        },
-                        child: Container(
+                  child: InkWell(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.productDetails);
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
                           padding: EdgeInsets.only(top: 10.h),
                           child: Image.asset(
                             ImagesPath.product,
@@ -58,64 +58,56 @@ class Products extends StatelessWidget {
                             width: 80.w,
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.productDetails);
-                        },
-                        child: Text("productTitle".tr,
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        Text("productTitle".tr,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
                             )),
-                      ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      Text('${"productDiscountPrice".tr} ${"pound".tr} ',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.secondryColor,
-                            shadows: const [
-                              Shadow(
-                                blurRadius: 2.0,
-                                color: AppColors.secondryColor,
-                              ),
-                            ],
-                          )),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      Text(
-                          '${"instead".tr} ${"productPrice".tr} ${"pound".tr} ',
-                          style: TextStyle(
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        Text('${"productDiscountPrice".tr} ${"pound".tr} ',
+                            style: TextStyle(
                               fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: AppColors.secondryColor,
                               shadows: const [
                                 Shadow(
                                   blurRadius: 2.0,
                                   color: AppColors.secondryColor,
-                                  offset: Offset(0.0, 0.0),
                                 ),
-                              ])),
-                    ],
+                              ],
+                            )),
+                        Text(
+                            '${"instead".tr} ${"productPrice".tr} ${"pound".tr} ',
+                            style: TextStyle(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.secondryColor,
+                                shadows: const [
+                                  Shadow(
+                                    blurRadius: 2.0,
+                                    color: AppColors.secondryColor,
+                                    offset: Offset(0.0, 0.0),
+                                  ),
+                                ])),
+                      ],
+                    ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(3),
-                  margin: const EdgeInsets.only(left: 5, top: 5),
+                  padding: EdgeInsets.all(3.w),
+                  margin: EdgeInsets.only(left: 5.w, top: 5.h),
                   color: AppColors.secondryColor,
-                  child: Text(' - ${"percentage".tr} % ',
+                  child: Text('% ${"percentage".tr} -',
                       style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w800,
                           color: AppColors.whiteColor)),
                 )
               ],

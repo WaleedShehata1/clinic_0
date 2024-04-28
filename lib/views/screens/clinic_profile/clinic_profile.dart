@@ -9,6 +9,7 @@ class ClinicProfilePage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       body: SingleChildScrollView(
         child: Stack(
             alignment: Get.locale!.languageCode == "ar"
@@ -22,16 +23,16 @@ class ClinicProfilePage2 extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.10,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadiusDirectional.only(
-                            topEnd: const Radius.circular(250).r,
-                            topStart: const Radius.circular(350).r,
-                          ),
-                        ),
+                            color: Colors.white,
+                            borderRadius: BorderRadiusDirectional.only(
+                              topEnd: const Radius.circular(250).r,
+                              topStart: const Radius.circular(350).r,
+                            ),
+                            border: Border.all(color: Colors.white, width: 0)),
                         padding: EdgeInsetsDirectional.symmetric(
                             horizontal: 25.w, vertical: 50.h),
                         child: Column(
@@ -39,7 +40,7 @@ class ClinicProfilePage2 extends StatelessWidget {
                             Text(
                               "صيدلية المصري",
                               style: TextStyle(
-                                fontSize: 20.sp,
+                                fontSize: 22.sp,
                                 fontWeight: FontWeight.w900,
                               ),
                             ),
@@ -49,7 +50,7 @@ class ClinicProfilePage2 extends StatelessWidget {
                                 Text(
                                   "30 كيلومتر",
                                   style: TextStyle(
-                                    fontSize: 20.sp,
+                                    fontSize: 18.sp,
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.primaryColor,
                                   ),
@@ -198,7 +199,7 @@ class ClinicProfilePage2 extends StatelessWidget {
               Align(
                 alignment: Alignment.topCenter,
                 child: Transform.translate(
-                  offset: Offset(0, 90.h),
+                  offset: Offset(0, 60.h),
                   child: Container(
                     width: 100.w,
                     height: 90.h,

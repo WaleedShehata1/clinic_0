@@ -15,7 +15,7 @@ class VideoDetails extends StatelessWidget {
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBarWibget(
-            currentIndex: 5,
+            currentIndex: 4,
             bgColor: AppColors.appBg,
           )),
       body: SingleChildScrollView(
@@ -37,16 +37,20 @@ class VideoDetails extends StatelessWidget {
                 width: 10.w,
               ),
               InkWell(
+                borderRadius: BorderRadius.circular(15.r),
                 onTap: () {},
-                child: Image.asset(
-                  ImagesPath.icShare,
-                  width: 20.w,
-                  height: 30.h,
-                  fit: BoxFit.fill,
+                child: Container(
+                  margin: EdgeInsetsDirectional.symmetric(
+                      horizontal: 8.w, vertical: 5.h),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(15.r)),
+                  child: Image.asset(
+                    ImagesPath.icShare,
+                    width: 18.w,
+                    height: 28.h,
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: 10.w,
               ),
               IconButton(
                   onPressed: () {},
@@ -136,7 +140,7 @@ class VideoDetails extends StatelessWidget {
                       width: 10.w,
                     ),
                     Text(
-                        " ${"hour".tr} 38 ${"and".tr} ${"min".tr}/45 ${"video".tr}",
+                        "12 ${"hour".tr} ${"and".tr} 38 ${"min".tr} / 45 ${"video".tr}",
                         //  textDirection:TextDirection.rtl ,
                         style: TextStyle(
                             fontSize: 14.sp,

@@ -30,38 +30,34 @@ class VideosWidget extends StatelessWidget {
       child: Container(
         //height:120.h,
         padding: const EdgeInsets.all(8.8),
-        margin: const EdgeInsets.symmetric(vertical: 0.1),
+
         child: Row(
-          //  mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              flex: 1,
               child: Stack(
                 alignment: AlignmentDirectional.bottomStart,
                 children: [
-                  InkWell(
-                    onTap: onPress,
-                    child: Container(
-                      height: 100.h,
-                      constraints: BoxConstraints(minHeight: 100.h),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          image,
-                          width: double.maxFinite,
-                          height: 100.h,
-                          fit: BoxFit.fill,
-                        ),
+                  Container(
+                    height: 100.h,
+                    constraints: BoxConstraints(minHeight: 100.h),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        image,
+                        width: double.maxFinite,
+                        height: 100.h,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
                   Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                            bottom: 10, right: 10, left: 10),
-                        padding: const EdgeInsets.all(4),
+                        margin: EdgeInsets.only(
+                            bottom: 10.h, right: 10.w, left: 10.w),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 6.w, vertical: 3.w),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8.0),
                             color: AppColors.primaryColor),
@@ -71,18 +67,16 @@ class VideosWidget extends StatelessWidget {
                             children: [
                               Text(
                                 time,
-                                // textDirection:TextDirection.rtl ,
                                 style: TextStyle(
                                     color: AppColors.whiteColor,
-                                    fontSize: 12.sp),
+                                    fontSize: 18.sp),
                               ),
                               showPlayIcon != null
                                   ? Row(
                                       children: [
                                         Image.asset(
                                           ImagesPath.icPlay,
-                                          // width: 20.w,
-                                          // height: 20.h,
+                                          width: 25.w,
                                           fit: BoxFit.fill,
                                         ),
                                         SizedBox(
@@ -128,7 +122,7 @@ class VideosWidget extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 16.sp,
+                                  fontSize: 18.sp,
                                   color: AppColors.blackColor),
                             ),
                           ),
@@ -140,8 +134,8 @@ class VideosWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             child: Image.asset(
                               ImagesPath.icShare,
-                              width: 20.w,
-                              height: 25.h,
+                              width: 15.w,
+                              height: 23.h,
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -159,8 +153,8 @@ class VideosWidget extends StatelessWidget {
                             style: TextStyle(
                                 //  fontWeight: FontWeight.w400,
                                 fontSize: Get.locale!.languageCode == "ar"
-                                    ? 12.sp
-                                    : 10.sp,
+                                    ? 14.sp
+                                    : 12.sp,
                                 color: AppColors.blackColor),
                           ),
                           SizedBox(
@@ -171,8 +165,8 @@ class VideosWidget extends StatelessWidget {
                             style: TextStyle(
                                 //fontWeight: FontWeight.w400,
                                 fontSize: Get.locale!.languageCode == "ar"
-                                    ? 12.sp
-                                    : 10.sp,
+                                    ? 14.sp
+                                    : 12.sp,
                                 color: AppColors.blackColor),
                           ),
                         ],

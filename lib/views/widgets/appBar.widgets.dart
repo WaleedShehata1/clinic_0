@@ -57,7 +57,7 @@ class AppBarWibget extends StatelessWidget {
         : GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
             child: AppBar(
-              backgroundColor: currentIndex != null && currentIndex == 5
+              backgroundColor: currentIndex != null && currentIndex == 4
                   ? AppColors.appBg
                   : currentIndex == 3
                       ? AppColors.whiteColor
@@ -68,7 +68,8 @@ class AppBarWibget extends StatelessWidget {
                       "products".tr,
                       style: TextStyle(
                         color: AppColors.primaryColor,
-                        fontSize: 25.sp,
+                        fontSize: 24.sp,
+                        fontWeight: FontWeight.w800,
                         shadows: const [
                           Shadow(
                             blurRadius: 2.0,
@@ -85,7 +86,8 @@ class AppBarWibget extends StatelessWidget {
               leadingWidth: currentIndex == 3 ? 200.w : 100.w,
               leading: currentIndex == 3
                   ? Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 10),
+                      padding:
+                          EdgeInsetsDirectional.only(start: 10.w, top: 15.h),
                       child: Text(
                         "Online pharmacies".tr,
                         style: TextStyle(
@@ -96,7 +98,7 @@ class AppBarWibget extends StatelessWidget {
                     )
                   : Row(
                       children: [
-                        currentIndex != null && currentIndex == 5
+                        currentIndex != null && currentIndex == 4
                             ? Container(
                                 padding: const EdgeInsets.only(
                                     left: 5.5, right: 5.5),
@@ -143,28 +145,31 @@ class AppBarWibget extends StatelessWidget {
                     ? const SizedBox()
                     : currentIndex != null && currentIndex == 4
                         ? Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 5.0),
+                            padding: EdgeInsetsDirectional.only(
+                                start: 5.0, end: 5.0, top: 10.h),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.2,
+                                    width: (MediaQuery.of(context).size.width *
+                                            0.4)
+                                        .w,
                                     height: 30.h,
                                     child: TextField(
-                                      decoration: const InputDecoration(
+                                      textAlign: TextAlign.end,
+                                      maxLines: 1,
+                                      decoration: InputDecoration(
                                           border: InputBorder.none,
+                                          hintText: "${"search".tr}...",
+                                          helperMaxLines: 1,
+                                          errorMaxLines: 1,
+                                          helperStyle: TextStyle(
+                                            fontSize: 14.sp,
+                                          ),
+                                          hintMaxLines: 1,
                                           suffixIcon: Icon(Icons.search)),
                                       controller: search,
                                     )),
-                                // Text(
-                                //   ' ${"search".tr}..',
-                                //   style: TextStyle(
-                                //       fontFamily: "ArefRuqaa",
-                                //       fontSize: 14.sp,
-                                //       color: AppColors.textfieldGrey),
-                                // ),
                                 SizedBox(
                                   width: 4.w,
                                 ),
@@ -189,12 +194,7 @@ class AppBarWibget extends StatelessWidget {
                                           ? AppColors.whiteColor
                                           : AppColors.primaryColor,
                                       ImagesPath.icMessage,
-                                    )
-                                    // child: const Icon(
-                                    //   Icons.messenger_outline_outlined,
-                                    //   color: AppColors.primaryColor,
-                                    // )
-                                    ),
+                                    )),
                                 IconButton(
                                     onPressed: () {
                                       navigator!.push(

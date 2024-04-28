@@ -5,8 +5,14 @@ import 'package:get/get.dart';
 
 class CustomButtomAuth extends StatelessWidget {
   final String text;
+  final double? fontSize;
   final void Function()? onPressed;
-  const CustomButtomAuth({super.key, required this.text, this.onPressed});
+  const CustomButtomAuth({
+    super.key,
+    required this.text,
+    this.onPressed,
+    this.fontSize,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,8 @@ class CustomButtomAuth extends StatelessWidget {
         color: AppColors.primaryColor,
         textColor: Colors.white,
         child: Text(text,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp)),
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: fontSize ?? 20.sp)),
       ),
     );
   }

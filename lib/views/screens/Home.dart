@@ -26,14 +26,11 @@ class _HomeState extends State<Home> {
     BottomNavigationBarItem(
         icon: const Icon(
           Icons.home,
-          //  size: 20,
         ),
         label: "home".tr),
     BottomNavigationBarItem(
         icon: const Icon(
           Icons.dashboard_outlined,
-          //  size: 20,
-          //  size: 20,
         ),
         label: "suppliers".tr),
     BottomNavigationBarItem(
@@ -45,17 +42,8 @@ class _HomeState extends State<Home> {
     BottomNavigationBarItem(
         icon: const Icon(
           Icons.medication_liquid,
-          //  size: 20,
         ),
-        //icon: SvgPicture.asset(ImagesPath.pharmacyIc),
         label: "pharmacy".tr),
-    // BottomNavigationBarItem(
-    //     icon: const Icon(
-    //       Icons.home_work_outlined,
-    //       //    size: 20,
-    //     ),
-    //     //icon: SvgPicture.asset(ImagesPath.visitingsIc),
-    //     label: "visitings".tr),
     BottomNavigationBarItem(
       icon: SvgPicture.asset(ImagesPath.icEdu),
       label: "educationalWed".tr,

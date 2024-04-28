@@ -36,13 +36,15 @@ class CategoriesCard extends StatelessWidget {
           //  height: 100,
           width: width,
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.r),
+
             color: bgColor,
             boxShadow: <BoxShadow>[
               BoxShadow(
                   color: AppColors.cardBg,
                   blurRadius: 2.r,
-                  spreadRadius: 2.0,
-                  offset: Offset(0.0, 5.0))
+                  spreadRadius: 1.0.r,
+                  offset: Offset(0.0, 4.0.h))
             ],
             //    boxShadow: BoxShadow()
           ),

@@ -49,7 +49,7 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
         widget.title,
         style: TextStyle(
             color: AppColors.primaryColor,
-            fontSize: 18.sp,
+            fontSize: 19.sp,
             fontWeight: FontWeight.w600),
       ),
       SizedBox(
@@ -81,7 +81,7 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
           decoration: InputDecoration(
               hintStyle: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 14.sp,
+                  fontSize: 15.sp,
                   color: AppColors.hintColor),
               hintText: widget.hint,
               isDense: true,

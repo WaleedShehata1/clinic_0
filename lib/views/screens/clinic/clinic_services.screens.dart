@@ -42,7 +42,7 @@ class ClinicServices extends StatelessWidget {
                       img: ImagesPath.cat1,
                       circleColor: AppColors.lightBlue,
                       bgColor: AppColors.lightBgBlue,
-                      width: context.screenWidth / 2.2),
+                      width: context.screenWidth / 2.2.w),
                   CategoriesCard(
                       header1: "cofid19".tr,
                       header2: "temp".tr,
@@ -118,15 +118,10 @@ class ClinicServices extends StatelessWidget {
                                 padding: const EdgeInsets.all(8.0).w,
                                 height: 70.h,
                                 width: 100.w,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
                                   color: AppColors.cardBg,
-                                  //    boxShadow: BoxShadow()
                                 ),
-                                // child:SvgPicture.asset(
-                                // ListsApp.specialCatsList[index + 3],
-                                // fit: BoxFit.fill,
-                                // height: 70.h,
-                                // width: 80.w,)
                                 child: Image.asset(
                                   ListsApp.specialCatsList[index + 3],
                                   fit: BoxFit.fill,

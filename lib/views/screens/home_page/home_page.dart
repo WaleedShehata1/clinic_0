@@ -24,10 +24,8 @@ class HomePage extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              margin: EdgeInsetsDirectional.only(
-                start: 15.w,
-                end: 15.w,
-              ),
+              margin: EdgeInsetsDirectional.symmetric(
+                  horizontal: 15.w, vertical: 5.h),
               padding: EdgeInsetsDirectional.all(10.w),
               decoration: BoxDecoration(
                   color: const Color(0xffFF0000),
@@ -40,13 +38,19 @@ class HomePage extends StatelessWidget {
                     children: [
                       Text(
                         "subscription".tr,
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w900),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 17.sp,
+                        ),
                       ),
                       Text(
                         "You must register to enjoy our services".tr,
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w200),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15.sp,
+                        ),
                       ),
                     ]),
               ),
@@ -82,20 +86,21 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.all(10.w),
+              padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 15.w, vertical: 5.h),
               child: Text(
                 "Articles".tr,
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w800,
-                  fontSize: 18.sp,
+                  fontSize: 24.sp,
                 ),
               ),
             ),
             Container(
               width: double.infinity,
               height: 118.h,
-              margin: EdgeInsets.all(10.w),
+              margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15).r,

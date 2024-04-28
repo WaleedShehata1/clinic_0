@@ -24,7 +24,7 @@ class NotificationPage extends StatelessWidget {
                 Text(
                   "Notifications".tr,
                   style: TextStyle(
-                    fontSize: 22.sp,
+                    fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
@@ -42,7 +42,7 @@ class NotificationPage extends StatelessWidget {
           ),
           Padding(
             padding:
-                EdgeInsetsDirectional.only(bottom: 15.h, top: 5.h, start: 25.w),
+                EdgeInsetsDirectional.only(bottom: 5.h, top: 5.h, start: 25.w),
             child: Text(
               "today".tr,
               style: TextStyle(
@@ -57,8 +57,18 @@ class NotificationPage extends StatelessWidget {
                     return const ClinicProfilePage2();
                   })),
               child: cardNotification()),
-          cardNotification(),
-          cardNotification(),
+          InkWell(
+              onTap: () =>
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return const ClinicProfilePage2();
+                  })),
+              child: cardNotification()),
+          InkWell(
+              onTap: () =>
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return const ClinicProfilePage2();
+                  })),
+              child: cardNotification()),
         ]),
       ),
     );

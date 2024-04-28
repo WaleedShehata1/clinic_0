@@ -16,8 +16,8 @@ class logoWidget extends StatelessWidget {
       children: [
         Image.asset(
           'assets/icons/app_logo.png',
-          height: 60,
-          width: 60,
+          height: 60.h,
+          width: 60.w,
           fit: BoxFit.fill,
         ),
         const SizedBox(
@@ -28,7 +28,7 @@ class logoWidget extends StatelessWidget {
                 fontFamily: "ArefRuqaa",
                 color: AppColors.primaryColor,
                 fontWeight: FontWeight.bold,
-                fontSize: 30.sp)),
+                fontSize: 32.sp)),
       ],
     );
   }
