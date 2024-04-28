@@ -61,6 +61,7 @@ abstract class ImagesPath {
   static const video = "${_path}video.png";
   static const icShare = "${_path}icShare2.png";
   static const icSearch = "${_path}icSearch.png";
+  static const doctors = "${_path}eca07ee3cd9e2b88dacbd979de5b4344.png";
 
   static const String loading = "$_pathLottie/loading.json";
   static const String offline = "$_pathLottie/offline.json";

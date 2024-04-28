@@ -11,14 +11,14 @@ class CustomButtonLang extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
+      padding: EdgeInsets.symmetric(horizontal: 100.w),
       width: double.infinity,
       child: MaterialButton(
         color: AppColors.primaryColor,
         textColor: Colors.white,
         onPressed: onPressed,
         child: Text(textbutton,
-            style:  TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp)),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp)),
       ),
     );
   }

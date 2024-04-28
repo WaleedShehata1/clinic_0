@@ -9,11 +9,12 @@ Widget iconText({
   required double margin,
   required String text,
   required String image,
+  Color? color,
 }) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
     decoration: BoxDecoration(
-        color: const Color(0xffF4F4F4),
+        color: color ?? const Color(0xffF4F4F4),
         borderRadius: BorderRadius.circular(12).r),
     child: CustomBottonIconAndImage(
       marginHorizontal: 15.w,

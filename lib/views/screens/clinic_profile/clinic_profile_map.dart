@@ -11,17 +11,17 @@ class ClinicProfileMap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(alignment: Alignment.topCenter, children: [
-        Container(
-          padding: const EdgeInsetsDirectional.only(top: 20),
-          color: AppColors.primaryColor,
-          child: Column(
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.15,
-              ),
-              Expanded(
-                child: Container(
+      body: SingleChildScrollView(
+        child: Stack(alignment: Alignment.topCenter, children: [
+          Container(
+            padding: EdgeInsetsDirectional.only(top: 20.h),
+            color: AppColors.primaryColor,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.15,
+                ),
+                Container(
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadiusDirectional.only(
@@ -145,36 +145,10 @@ class ClinicProfileMap extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsetsDirectional.symmetric(
-                                horizontal: 15.w, vertical: 10.h),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50).r,
-                                border: Border.all(
-                                  color: AppColors.cardBg,
-                                  width: 2.w,
-                                )),
-                            child: Image.asset(
-                              ImagesPath.certificates,
-                              width: 50.w,
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              "الشهادات و الخبرات العلمية التي حصلت عليها",
-                              style: TextStyle(
-                                  fontSize: 16.sp, fontWeight: FontWeight.w900),
-                              softWrap: true,
-                              maxLines: 2,
-                            ),
-                          ),
-                        ],
-                      ),
                       Container(
                         width: double.infinity,
-                        padding: EdgeInsetsDirectional.all(8.w),
+                        padding: EdgeInsetsDirectional.symmetric(
+                            horizontal: 15.w, vertical: 10.h),
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -193,11 +167,45 @@ class ClinicProfileMap extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
+                            Row(
+                              children: [
+                                Container(
+                                  margin: EdgeInsetsDirectional.symmetric(
+                                      horizontal: 15.w, vertical: 10.h),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50).r,
+                                      border: Border.all(
+                                        color: AppColors.cardBg,
+                                        width: 2.w,
+                                      )),
+                                  child: Image.asset(
+                                    ImagesPath.certificates,
+                                    width: 45.w,
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    "الأقسام المتواجدة في المستشفي",
+                                    style: TextStyle(
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w900),
+                                    softWrap: true,
+                                    maxLines: 2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              margin: EdgeInsetsDirectional.only(bottom: 10.h),
+                              width: double.infinity,
+                              height: 0.2.h,
+                              color: AppColors.blackColor,
+                            ),
                             Text(
-                              "1-دكتوراة جراحة القلب و الصدر في نوفمبر عام 2002.",
+                              "1- دكتوراة جراحة القلب و الصدر في نوفمبر عام 2002.",
                               style: TextStyle(
-                                fontSize: 14.sp,
-                                height: 0.8.h,
+                                fontSize: 15.sp,
+                                height: 0.9.h,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -206,8 +214,8 @@ class ClinicProfileMap extends StatelessWidget {
                               child: Text(
                                 "2-زميل عيادة سان دوناتو في جامعة ميلانو بدولة إيطاليا عام 2007.",
                                 style: TextStyle(
-                                  fontSize: 14.sp,
-                                  height: 0.8.h,
+                                  fontSize: 15.sp,
+                                  height: 0.9.h,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -215,24 +223,27 @@ class ClinicProfileMap extends StatelessWidget {
                             Text(
                               "3-ماجستير الجراحة العامة في نوفمبر عام 1997-بتقدير امتياز.",
                               style: TextStyle(
-                                height: 0.8.h,
-                                fontSize: 14.sp,
+                                height: 0.9.h,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
-                            Text(
-                              "4-م.كلية الطب في جامعة القاهرة في ديسمبر عام 1993-بتقدير امتياز مع مرتبة الشرف.",
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                height: 0.8.h,
-                                fontWeight: FontWeight.w800,
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 5.h),
+                              child: Text(
+                                "4-م.كلية الطب في جامعة القاهرة في ديسمبر عام 1993-بتقدير امتياز مع مرتبة الشرف.",
+                                style: TextStyle(
+                                  fontSize: 15.sp,
+                                  height: 0.9.h,
+                                  fontWeight: FontWeight.w800,
+                                ),
                               ),
                             ),
                             Text(
                               "5-الشهادة العامة للتعليم في إنجلترا/القاهرة في يونيو عام 1987.",
                               style: TextStyle(
-                                fontSize: 14.sp,
-                                height: 0.8.h,
+                                fontSize: 15.sp,
+                                height: 0.9.h,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -329,14 +340,14 @@ class ClinicProfileMap extends StatelessWidget {
                                     "300 ج",
                                     style: TextStyle(
                                       fontSize: 16.sp,
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w800,
                                     ),
                                   ),
                                   Text(
                                     "450ج",
                                     style: TextStyle(
                                       fontSize: 16.sp,
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w800,
                                     ),
                                   ),
                                 ],
@@ -348,67 +359,68 @@ class ClinicProfileMap extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
-            ],
-          ),
-        ),
-        Transform.translate(
-          offset: const Offset(-190, -150),
-          child: Container(
-            width: 350.w,
-            height: 300.h,
-            decoration: BoxDecoration(
-                color: const Color(0xffFFFFFF).withOpacity(0.2),
-                borderRadius: const BorderRadius.all(Radius.circular(300))),
-          ),
-        ),
-        Transform.translate(
-          offset: const Offset(-10, 88),
-          child: Container(
-            width: 120,
-            height: 100,
-            alignment: Alignment.topCenter,
-            margin: const EdgeInsetsDirectional.only(bottom: 10),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
-            child: Image.asset(
-              ImagesPath.person,
-              width: 200.w,
-              height: 200.h,
-              fit: BoxFit.fitHeight,
+              ],
             ),
           ),
-        ),
-        Transform.translate(
-          offset: const Offset(-10, 62),
-          child: Container(
+          Transform.translate(
+            offset: const Offset(-190, -150),
+            child: Container(
+              width: 350.w,
+              height: 300.h,
+              decoration: BoxDecoration(
+                  color: const Color(0xffFFFFFF).withOpacity(0.2),
+                  borderRadius: const BorderRadius.all(Radius.circular(300))),
+            ),
+          ),
+          Transform.translate(
+            offset: const Offset(-10, 88),
+            child: Container(
+              width: 120,
+              height: 100,
               alignment: Alignment.topCenter,
-              margin: EdgeInsetsDirectional.only(bottom: 10.h),
+              margin: const EdgeInsetsDirectional.only(bottom: 10),
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(25)),
-              child: Text(
-                "Cardiology and thoracology",
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: AppColors.whiteColor,
-                  fontWeight: FontWeight.w500,
-                  wordSpacing: 2,
-                  letterSpacing: 1,
-                ),
-                maxLines: 1,
-              )),
-        ),
-        Transform.translate(
-          offset: Offset(-150.w, 20.h),
-          child: IconButton(
-            icon: Icon(
-              Icons.arrow_right_alt,
-              color: AppColors.whiteColor,
-              size: 30.w,
+              child: Image.asset(
+                ImagesPath.person,
+                width: 200.w,
+                height: 200.h,
+                fit: BoxFit.fitHeight,
+              ),
             ),
-            onPressed: () => Navigator.pop(context),
           ),
-        ),
-      ]),
+          Transform.translate(
+            offset: const Offset(-10, 62),
+            child: Container(
+                alignment: Alignment.topCenter,
+                margin: EdgeInsetsDirectional.only(bottom: 10.h),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(25)),
+                child: Text(
+                  "Cardiology and thoracology",
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    color: AppColors.whiteColor,
+                    fontWeight: FontWeight.w500,
+                    wordSpacing: 2,
+                    letterSpacing: 1,
+                  ),
+                  maxLines: 1,
+                )),
+          ),
+          Transform.translate(
+            offset: Offset(-150.w, 20.h),
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_right_alt,
+                color: AppColors.whiteColor,
+                size: 30.w,
+              ),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
+        ]),
+      ),
     );
   }
 }
