@@ -88,6 +88,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               hintStyle: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 15.sp,
+
                   color: AppColors.blackColor),
               hintText: widget.hint,
               isDense: true,
