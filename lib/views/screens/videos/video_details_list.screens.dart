@@ -29,7 +29,7 @@ class VideoDetailsList extends StatelessWidget {
                   Column(
                     children: [
                       SizedBox(
-                        height: 10.h,
+                        height: 5.h,
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -67,9 +67,6 @@ class VideoDetailsList extends StatelessWidget {
                       SizedBox(
                         height: 5.h,
                       ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
                       const Divider(
                         color: AppColors.secondryColor,
                       ),
@@ -79,7 +76,6 @@ class VideoDetailsList extends StatelessWidget {
                       SizedBox(
                         height: context.screenHeight - 150.h,
                         child: ListView.builder(
-                          //    scrollDirection: NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           padding: const EdgeInsets.all(8),
                           itemCount: 10,

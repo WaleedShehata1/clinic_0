@@ -69,7 +69,7 @@ class VideosWidget extends StatelessWidget {
                                 time,
                                 style: TextStyle(
                                     color: AppColors.whiteColor,
-                                    fontSize: 18.sp),
+                                    fontSize: 16.sp),
                               ),
                               showPlayIcon != null
                                   ? Row(
