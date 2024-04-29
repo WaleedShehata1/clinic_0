@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import 'clinic/hospitals.dart';
 import 'home_page/home_page.dart';
 
 class Home extends StatefulWidget {
@@ -55,7 +56,7 @@ class _HomeState extends State<Home> {
   List body = [
     const HomePage(),
     const ClinicServices(),
-    const MyWidget(),
+    const Hospitals(),
     const OnlineShop(),
     const VideosList()
   ];

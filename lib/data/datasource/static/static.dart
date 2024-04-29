@@ -4,6 +4,8 @@ import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/models/onboarding.models.dart';
 import 'package:get/get.dart';
 
+import '../../../models/market.dart';
+
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
       title: "onboardingtitle1".tr,
@@ -26,4 +28,51 @@ List<OnBoardingModel> onBoardingList = [
       body: "onboardingBody5".tr,
       image: ImagesPath.onBoarding5),
 
+];
+
+List market = [
+  Market(
+      id: '1',
+      lat: 31.345692,
+      long: 30.437645,
+      title: 'Dr,Ali ahmed',
+      image: 'assets/images/personIcon.png',
+      description: 'Cardiothoracic department'),
+  Market(
+      id: '2',
+      lat: 31.346952,
+      long: 30.536145,
+      title: 'Dr,Ali ahmed',
+      image: 'assets/images/personIcon.png',
+      description: 'Cardiothoracic department'),
+  Market(
+      id: '3',
+      lat: 31.454192,
+      long: 30.737145,
+      title: 'Dr,Ali ahmed',
+      image: 'assets/images/personIcon.png',
+      description: 'Cardiothoracic department'),
+];
+List marketHospital = [
+  Market(
+      id: '1',
+      lat: 31.345692,
+      long: 30.437645,
+      title: 'El_Nobaria',
+      image: 'assets/images/hospital.png',
+      description: 'Cardiothoracic department'),
+  Market(
+      id: '2',
+      lat: 31.346952,
+      long: 30.536145,
+      title: 'El_Nobaria',
+      image: 'assets/images/hospital.png',
+      description: 'Cardiothoracic department'),
+  Market(
+      id: '3',
+      lat: 31.454192,
+      long: 30.737145,
+      title: 'El_Nobaria',
+      image: 'assets/images/hospital.png',
+      description: 'Cardiothoracic department'),
 ];
