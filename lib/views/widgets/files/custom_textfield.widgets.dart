@@ -5,15 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../commponents/text_Form_Field.dart';
+
 class CustomTextFieldFile extends StatefulWidget {
   final String hint;
   final String title;
+  final double? height;
+  final double? radius;
   final TextEditingController controller;
   final Function(String?)? onClick;
   bool isNum;
 
   CustomTextFieldFile({
     super.key,
+    this.height,
+    this.radius,
     required this.title,
     required this.hint,
     required this.controller,
@@ -55,7 +61,9 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
       SizedBox(
         height: 5.h,
       ),
-      TextFormField(
+      SizedBox(
+        height: widget.height,
+        child: DefaultFormField(
           validator: (value) {
             if (value!.isEmpty) {
               return errorMessage(widget.title);
@@ -71,43 +79,18 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
             }
             return null;
           },
+          radius: widget.radius,
+          hint: widget.hint,
           keyboardType: widget.isNum
               ? const TextInputType.numberWithOptions()
               : TextInputType.text,
           onSaved: widget.onClick,
-          cursorColor: AppColors.primaryColor,
-          style: TextStyle(color: AppColors.primaryColor, fontSize: 18.sp),
+          fontSize: 18.sp,
+          textColor: AppColors.primaryColor,
           controller: widget.controller,
-          decoration: InputDecoration(
-              hintStyle: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 15.sp,
-                  color: AppColors.hintColor),
-              hintText: widget.hint,
-              isDense: true,
-              contentPadding: EdgeInsets.all(5.w),
-              fillColor: AppColors.bgColor,
-              filled: true,
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.0.r),
-                borderSide: const BorderSide(
-                  color: AppColors.primaryColor,
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.0.r),
-                borderSide: BorderSide(
-                  color: AppColors.primaryColor,
-                  width: 2.w,
-                ),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.0.r),
-                borderSide: BorderSide(
-                  color: AppColors.primaryColor,
-                  width: 2.w,
-                ),
-              ))),
+          fillColor: AppColors.whiteColor,
+        ),
+      ),
       SizedBox(
         height: 5.h,
       ),

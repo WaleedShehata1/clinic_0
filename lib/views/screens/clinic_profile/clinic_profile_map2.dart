@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/consts/images.dart';
 import '../../widgets/commponents/custom_botton_icon_or_image.dart';
-import '../../widgets/commponents/icon&text.dart';
 
 class ClinicProfileMap2 extends StatelessWidget {
   const ClinicProfileMap2({super.key});

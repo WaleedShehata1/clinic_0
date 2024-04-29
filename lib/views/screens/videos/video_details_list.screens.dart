@@ -7,9 +7,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class VideoDetailsList extends StatelessWidget {
+class VideoDetailsList extends StatefulWidget {
   const VideoDetailsList({super.key});
 
+  @override
+  State<VideoDetailsList> createState() => _VideoDetailsListState();
+}
+
+class _VideoDetailsListState extends State<VideoDetailsList> {
+  bool saved = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -45,10 +51,15 @@ class VideoDetailsList extends StatelessWidget {
                               width: 10.w,
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                setState(() {
+                                  saved = !saved;
+                                });
+                              },
+                              splashColor: Colors.transparent,
                               child: Image.asset(
-                                ImagesPath.icShare,
-                                width: 20.w,
+                                saved ? ImagesPath.saved : ImagesPath.noSaved,
+                                width: 30.w,
                                 height: 30.h,
                                 fit: BoxFit.fill,
                               ),

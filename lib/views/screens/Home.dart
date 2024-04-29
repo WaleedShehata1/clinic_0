@@ -2,7 +2,7 @@
 
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/screens/clinic/clinic_services.screens.dart';
-import 'package:clinic/views/screens/clinic/text.dart';
+
 import 'package:clinic/views/screens/shop_online/online_shop.dart';
 import 'package:clinic/views/screens/videos/videos.list.screens.dart';
 import 'package:clinic/views/widgets/appBar.widgets.dart';

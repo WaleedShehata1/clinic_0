@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_collection_literals
+
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/screens/clinic/widget/serach_location_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -12,8 +14,8 @@ import 'package:velocity_x/velocity_x.dart';
 import '../../../core/functions/loction_map.dart';
 import '../../../data/datasource/static/static.dart';
 import '../../../models/market.dart';
-import '../../widgets/auth/custom_textfield.auth.dart';
 import '../clinic_profile/clinic_profile_map.dart';
+import '../clinic_profile/clinic_profile_map2.dart';
 
 class Hospitals extends StatefulWidget {
   const Hospitals({super.key});
@@ -48,7 +50,7 @@ class _HospitalsState extends State<Hospitals> {
 
   Widget _customMarkerWidget(String url) {
     return SizedBox(
-      width: 50,  // Specify a fixed size for testing
+      width: 50, // Specify a fixed size for testing
       height: 50,
       child: Image.asset(url, fit: BoxFit.fill),
     );
@@ -58,12 +60,12 @@ class _HospitalsState extends State<Hospitals> {
     try {
       final imageBytes = await _screenshotController.captureFromLongWidget(
         _customMarkerWidget(url),
-        pixelRatio: 1.0,  // Adjust pixel ratio if necessary
+        pixelRatio: 1.0, // Adjust pixel ratio if necessary
       );
       return imageBytes;
     } catch (e) {
       print('Failed to capture widget: $e');
-      return null;  // Handle the error appropriately
+      return null; // Handle the error appropriately
     }
   }
 
@@ -89,6 +91,7 @@ class _HospitalsState extends State<Hospitals> {
       setState(() {});
     }
   }
+
   addMarketHospital() async {
     for (Market market in marketHospital) {
       final customMarkerBytes = await _convertWidgetToBytes(market.image!);
@@ -135,8 +138,7 @@ class _HospitalsState extends State<Hospitals> {
                       textDirection: TextDirection.ltr,
                       child: VxRating(
                         normalColor: AppColors.whiteColor,
-                        selectionColor:
-                        AppColors.secondryColor,
+                        selectionColor: AppColors.secondryColor,
                         size: 20.sp,
                         count: 5,
                         value: 8,
@@ -155,12 +157,16 @@ class _HospitalsState extends State<Hospitals> {
           ),
           ElevatedButton(
             onPressed: () {
-              if(title == 'Dr,Ali ahmed') {
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const ClinicProfileMap()));
-              }else if (title == 'El_Nobaria'){
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ClinicProfileMap()));
+              if (title == 'Dr,Ali ahmed') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ClinicProfileMap()));
+              } else if (title == 'El_Nobaria') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ClinicProfileMap2()));
               }
             },
             child: const Text('GO'),
@@ -235,7 +241,6 @@ class _HospitalsState extends State<Hospitals> {
                                 setState(() {
                                   val = value;
                                   markers.clear();
-
                                 });
                                 await addMarket();
                               },
@@ -274,7 +279,6 @@ class _HospitalsState extends State<Hospitals> {
                                 setState(() {
                                   val = value;
                                   markers.clear();
-
                                 });
                               },
                             ),
@@ -292,6 +296,4 @@ class _HospitalsState extends State<Hospitals> {
       ),
     );
   }
-
 }
-

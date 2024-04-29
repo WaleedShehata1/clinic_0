@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class VideosWidget extends StatelessWidget {
+class VideosWidget extends StatefulWidget {
   final String image;
   final String title;
   final String view;
@@ -24,9 +24,15 @@ class VideosWidget extends StatelessWidget {
   });
 
   @override
+  State<VideosWidget> createState() => _VideosWidgetState();
+}
+
+class _VideosWidgetState extends State<VideosWidget> {
+  bool saved = false;
+  @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPress,
+      onTap: widget.onPress,
       child: Container(
         //height:120.h,
         padding: const EdgeInsets.all(8.8),
@@ -44,7 +50,7 @@ class VideosWidget extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
-                        image,
+                        widget.image,
                         width: double.maxFinite,
                         height: 100.h,
                         fit: BoxFit.fill,
@@ -66,12 +72,12 @@ class VideosWidget extends StatelessWidget {
                           child: Row(
                             children: [
                               Text(
-                                time,
+                                widget.time,
                                 style: TextStyle(
                                     color: AppColors.whiteColor,
                                     fontSize: 16.sp),
                               ),
-                              showPlayIcon != null
+                              widget.showPlayIcon != null
                                   ? Row(
                                       children: [
                                         Image.asset(
@@ -115,7 +121,7 @@ class VideosWidget extends StatelessWidget {
                             // color: Colors.amber,
                             constraints: BoxConstraints(minHeight: 60.h),
                             child: Text(
-                              title,
+                              widget.title,
                               maxLines: 2,
                               // textDirection: TextDirection.rtl,
                               //textAlign: TextAlign.right,
@@ -130,12 +136,17 @@ class VideosWidget extends StatelessWidget {
                             width: 5.w,
                           ),
                           InkWell(
-                            onTap: () {},
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15.r),
+                            onTap: () {
+                              setState(() {
+                                saved = !saved;
+                              });
+                            },
+                            splashColor: Colors.transparent,
                             child: Image.asset(
-                              ImagesPath.icShare,
-                              width: 15.w,
-                              height: 23.h,
+                              saved ? ImagesPath.saved : ImagesPath.noSaved,
+                              width: 24.w,
+                              height: 26.h,
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -149,7 +160,7 @@ class VideosWidget extends StatelessWidget {
                         // mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            '${view} ${'seen'.tr}',
+                            '${widget.view} ${'seen'.tr}',
                             style: TextStyle(
                                 //  fontWeight: FontWeight.w400,
                                 fontSize: Get.locale!.languageCode == "ar"
@@ -161,7 +172,7 @@ class VideosWidget extends StatelessWidget {
                             width: 10.w,
                           ),
                           Text(
-                            '${'from'.tr} ${date} ',
+                            '${'from'.tr} ${widget.date} ',
                             style: TextStyle(
                                 //fontWeight: FontWeight.w400,
                                 fontSize: Get.locale!.languageCode == "ar"

@@ -25,27 +25,27 @@ class _BloodTypeDropdownState extends State<BloodTypeDropdown> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: MediaQuery.of(context).size.width / 2,
+          height: 40.h,
+          width: MediaQuery.of(context).size.width / 1.8,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
+            color: AppColors.whiteColor,
+            borderRadius: BorderRadius.circular(12.r),
             border: Border.all(color: AppColors.primaryColor, width: 2.w),
           ),
           child: DropdownButton(
             underline: const SizedBox(),
-            borderRadius: BorderRadius.circular(22),
+            borderRadius: BorderRadius.circular(12.r),
             style: const TextStyle(color: AppColors.primaryColor),
-            icon: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
+            icon: Padding(
+              padding: EdgeInsets.all(8.0.w),
+              child: const Icon(
                 Icons.keyboard_arrow_down_sharp,
                 size: 20,
                 color: AppColors.primaryColor,
               ),
             ),
             isExpanded: true,
-            // borderRadius: BorderRadius.circular(15),
-            iconSize: 30,
-            //dropdownColor: AppColors.primary,
+            // borderRadius: BorderRadius.circular(15),            iconSize: 30,
 
             value: _selectedBloodType,
             onChanged: (newValue) {

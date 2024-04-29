@@ -29,6 +29,7 @@ class _GenderDropdownState extends State<GenderDropdown> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
+          height: 45.h,
           width: MediaQuery.of(context).size.width / 2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),

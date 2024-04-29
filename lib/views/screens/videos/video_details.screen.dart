@@ -6,9 +6,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class VideoDetails extends StatelessWidget {
+class VideoDetails extends StatefulWidget {
   const VideoDetails({super.key});
 
+  @override
+  State<VideoDetails> createState() => _VideoDetailsState();
+}
+
+class _VideoDetailsState extends State<VideoDetails> {
+  bool saved = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,18 +44,17 @@ class VideoDetails extends StatelessWidget {
               ),
               InkWell(
                 borderRadius: BorderRadius.circular(15.r),
-                onTap: () {},
-                child: Container(
-                  margin: EdgeInsetsDirectional.symmetric(
-                      horizontal: 8.w, vertical: 5.h),
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15.r)),
-                  child: Image.asset(
-                    ImagesPath.icShare,
-                    width: 18.w,
-                    height: 28.h,
-                    fit: BoxFit.fill,
-                  ),
+                onTap: () {
+                  setState(() {
+                    saved = !saved;
+                  });
+                },
+                splashColor: Colors.transparent,
+                child: Image.asset(
+                  saved ? ImagesPath.saved : ImagesPath.noSaved,
+                  width: 28.w,
+                  height: 30.h,
+                  fit: BoxFit.fill,
                 ),
               ),
               IconButton(
