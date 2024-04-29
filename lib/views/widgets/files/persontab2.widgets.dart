@@ -23,6 +23,7 @@ class PersonTabTwo extends StatelessWidget {
           Row(
             children: [
               CustomTextTitle(
+                fontSize: 24.sp,
                 text: "patientFile".tr,
               ),
               SizedBox(
