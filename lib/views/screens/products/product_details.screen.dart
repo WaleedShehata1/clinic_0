@@ -47,9 +47,8 @@ class ProductDetails extends StatelessWidget {
                     width: double.infinity,
                     child: Column(
                       children: [
-<<<<<<< HEAD
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Expanded(
                               flex: 1,
@@ -69,7 +68,7 @@ class ProductDetails extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                             fontSize:
                                                 Get.locale!.languageCode == "ar"
-                                                    ? 12.sp
+                                                    ? 10.sp
                                                     : 10.sp),
                                       ),
                                       //  ),
@@ -83,19 +82,19 @@ class ProductDetails extends StatelessWidget {
                                             MainAxisAlignment.center,
                                         children: [
                                           Container(
-                                            padding: const EdgeInsets.all(8),
+                                            padding: const EdgeInsets.all(3),
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(20),
                                               color: AppColors.primaryColor,
                                             ),
                                             child: ClipRRect(
-                                              //  borderRadius:
-                                              // BorderRadius.circular(50),
+                                              borderRadius:
+                                                  BorderRadius.circular(50),
                                               child: Image.asset(
                                                 ImagesPath.cart,
-                                                width: 25.w,
-                                                height: 25.h,
+                                                width: 40.w,
+                                                height: 40.h,
                                                 fit: BoxFit.fill,
                                               ),
                                             ),
@@ -154,42 +153,10 @@ class ProductDetails extends StatelessWidget {
                               ),
                             ),
                           ],
-=======
-                        SizedBox(
-                          height: 70.h,
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Price after discount: 250 EGP".tr,
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 16.2.sp,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                                InkWell(
-                                  onTap: () {},
-                                  borderRadius: BorderRadius.circular(20.r),
-                                  child: Container(
-                                    padding: EdgeInsetsDirectional.all(10.w),
-                                    decoration: BoxDecoration(
-                                        color: AppColors.primaryColor,
-                                        borderRadius:
-                                            BorderRadius.circular(20).r),
-                                    child: Icon(
-                                      Icons.add_shopping_cart_rounded,
-                                      color: Colors.white,
-                                      size: 30.w,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
                             Container(
                               margin: EdgeInsetsDirectional.symmetric(
                                   horizontal: 5.w),

@@ -41,35 +41,23 @@ class _VideosWidgetState extends State<VideosWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-<<<<<<< HEAD
               flex: 1,
-              child:  Stack(
-                alignment: AlignmentDirectional.bottomStart,
-                children: [
-                  Container(
-                    height: 80.h,
-                    constraints: BoxConstraints(minHeight: 80.h),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        image,
-                        width: double.maxFinite,
-                       // height: 100.h,
-=======
               child: Stack(
                 alignment: AlignmentDirectional.bottomStart,
                 children: [
-                  Container(
-                    height: 100.h,
-                    constraints: BoxConstraints(minHeight: 100.h),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        widget.image,
-                        width: double.maxFinite,
-                        height: 100.h,
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
-                        fit: BoxFit.fill,
+                  InkWell(
+                    onTap: onPress,
+                    child: Container(
+                      height: 100.h,
+                      constraints: BoxConstraints(minHeight: 100.h),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          image,
+                          width: double.maxFinite,
+                          height: 100.h,
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
@@ -91,23 +79,15 @@ class _VideosWidgetState extends State<VideosWidget> {
                                 widget.time,
                                 style: TextStyle(
                                     color: AppColors.whiteColor,
-<<<<<<< HEAD
-                                    fontSize: 10.sp),
-=======
-                                    fontSize: 16.sp),
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
+                                    fontSize: 12.sp),
                               ),
                               widget.showPlayIcon != null
                                   ? Row(
                                       children: [
                                         Image.asset(
                                           ImagesPath.icPlay,
-<<<<<<< HEAD
-                                          width: 20.w,
-                                           height: 20.h,
-=======
-                                          width: 25.w,
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
+                                          // width: 20.w,
+                                          // height: 20.h,
                                           fit: BoxFit.fill,
                                         ),
                                         SizedBox(

@@ -33,41 +33,25 @@ class Products extends StatelessWidget {
           mainAxisSpacing: 7,
           children: List.generate(
             20,
-<<<<<<< HEAD
-            (index) => InkWell(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.productDetails);
-                        },
-              child: Stack(
-                alignment: Alignment.topLeft,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(
-                      5.0.w,
-                    ),
-                    color: AppColors.cardBg,
-                    // height:
-                    //     MediaQuery.of(context).size.width < 450 ? 250.h : 350.h,
-                    width: 120.w,
-=======
             (index) => Stack(
               alignment: Alignment.topLeft,
               children: [
                 Container(
                   padding: EdgeInsets.all(
-                    5.w,
+                    5.0.w,
                   ),
                   color: AppColors.cardBg,
+                  // height:
+                  //     MediaQuery.of(context).size.width < 450 ? 250.h : 350.h,
                   width: 120.w,
-                  child: InkWell(
-                    onTap: () {
-                      Get.toNamed(AppRoutes.productDetails);
-                    },
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.productDetails);
+                        },
+                        child: Container(
                           padding: EdgeInsets.only(top: 10.h),
                           child: Image.asset(
                             ImagesPath.product,
@@ -86,74 +70,52 @@ class Products extends StatelessWidget {
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
                             )),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        Text('${"productDiscountPrice".tr} ${"pound".tr} ',
-                            style: TextStyle(
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Text('${"productDiscountPrice".tr} ${"pound".tr} ',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.secondryColor,
+                            shadows: const [
+                              Shadow(
+                                blurRadius: 2.0,
+                                color: AppColors.secondryColor,
+                              ),
+                            ],
+                          )),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Text(
+                          '${"instead".tr} ${"productPrice".tr} ${"pound".tr} ',
+                          style: TextStyle(
                               fontSize: 16.sp,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               color: AppColors.secondryColor,
                               shadows: const [
                                 Shadow(
                                   blurRadius: 2.0,
                                   color: AppColors.secondryColor,
+                                  offset: Offset(0.0, 0.0),
                                 ),
-                              ],
-                            )),
-<<<<<<< HEAD
-                        SizedBox(
-                          height: 5.h,
-                        ),
-=======
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
-                        Text(
-                            '${"instead".tr} ${"productPrice".tr} ${"pound".tr} ',
-                            style: TextStyle(
-                                fontSize: 16.sp,
-<<<<<<< HEAD
-                                fontWeight: FontWeight.w600,
-=======
-                                fontWeight: FontWeight.w500,
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
-                                color: AppColors.secondryColor,
-                                shadows: const [
-                                  Shadow(
-                                    blurRadius: 2.0,
-                                    color: AppColors.secondryColor,
-                                    offset: Offset(0.0, 0.0),
-                                  ),
-                                ])),
-                      ],
-                    ),
+                              ])),
+                    ],
                   ),
-<<<<<<< HEAD
-                  Container(
-                    padding: const EdgeInsets.all(3),
-                    margin: const EdgeInsets.only(left: 5, top: 5),
-                    color: AppColors.secondryColor,
-                    child: Text(' - ${"percentage".tr} % ',
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.whiteColor)),
-                  )
-                ],
-              ),
-=======
                 ),
                 Container(
-                  padding: EdgeInsets.all(3.w),
-                  margin: EdgeInsets.only(left: 5.w, top: 5.h),
+                  padding: const EdgeInsets.all(3),
+                  margin: const EdgeInsets.only(left: 5, top: 5),
                   color: AppColors.secondryColor,
-                  child: Text('% ${"percentage".tr} -',
+                  child: Text(' - ${"percentage".tr} % ',
                       style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w600,
                           color: AppColors.whiteColor)),
                 )
               ],
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
             ),
           ),
         ),

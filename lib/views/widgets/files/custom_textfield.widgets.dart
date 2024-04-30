@@ -62,14 +62,7 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
        SizedBox(
         height:5.h,
       ),
-<<<<<<< HEAD
       TextFormField(
-        
-=======
-      SizedBox(
-        height: widget.height,
-        child: DefaultFormField(
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
           validator: (value) {
             if (value!.isEmpty) {
               return errorMessage(widget.title);
@@ -83,58 +76,43 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
             }            
             return null;
           },
-<<<<<<< HEAD
-          keyboardType: widget.isNum ? const TextInputType.numberWithOptions() :TextInputType.text,
+          keyboardType: widget.isNum
+              ? const TextInputType.numberWithOptions()
+              : TextInputType.text,
           onSaved: widget.onClick,
           cursorColor: AppColors.primaryColor,
-          style:  TextStyle(color: AppColors.primaryColor,fontSize: 18.sp),
+          style: TextStyle(color: AppColors.primaryColor, fontSize: 18.sp),
           controller: widget.controller,
           decoration: InputDecoration(
-              hintStyle: const TextStyle(
-                  fontWeight: FontWeight.w600,fontSize:14, color: AppColors.hintColor),
+              hintStyle: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14.sp,
+                  color: AppColors.hintColor),
               hintText: widget.hint,
               isDense: true,
-              contentPadding:const EdgeInsets.all(20),
+              contentPadding: EdgeInsets.all(5.w),
               fillColor: AppColors.bgColor,
-             
-             
-               filled: true,
+              filled: true,
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(12.0.r),
                 borderSide: const BorderSide(
                   color: AppColors.primaryColor,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.0),
-                borderSide: const BorderSide(
+                borderRadius: BorderRadius.circular(12.0.r),
+                borderSide: BorderSide(
                   color: AppColors.primaryColor,
-                  width: 2.0,
+                  width: 2.w,
                 ),
               ),
-                border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.0),
-                borderSide: const BorderSide(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12.0.r),
+                borderSide: BorderSide(
                   color: AppColors.primaryColor,
-                  width: 2.0,
+                  width: 2.w,
                 ),
-              )
-              )
-              ),
-       SizedBox(
-=======
-          radius: widget.radius,
-          hint: widget.hint,
-          keyboardType: widget.isNum
-              ? const TextInputType.numberWithOptions()
-              : TextInputType.text,
-          onSaved: widget.onClick,
-          fontSize: 18.sp,
-          textColor: AppColors.primaryColor,
-          controller: widget.controller,
-          fillColor: AppColors.whiteColor,
-        ),
-      ),
+              ))),
       SizedBox(
 >>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
         height: 5.h,

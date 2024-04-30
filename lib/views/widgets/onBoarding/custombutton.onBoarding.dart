@@ -17,27 +17,15 @@ class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
           borderRadius: BorderRadius.circular(20),
           border: Border.all(width: 2, color: AppColors.primaryColor)),
       child: MaterialButton(
-<<<<<<< HEAD
-          padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height < 500 ? 5.h : 10.h),
-=======
-          padding: EdgeInsets.symmetric(vertical: 5.h),
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
+          padding: EdgeInsets.symmetric(vertical: 10.h),
           textColor: AppColors.secondryColor,
           onPressed: () {
             controller.next();
           },
           // color: AppColors.whiteColor,
           child: Text(
-<<<<<<< HEAD
-            index == 4
-                ? "start".tr
-                : "next".tr,
-            style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
-=======
             index == 4 ? "start".tr : "next".tr,
-            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w800),
->>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
+            style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
           )),
     );
   }

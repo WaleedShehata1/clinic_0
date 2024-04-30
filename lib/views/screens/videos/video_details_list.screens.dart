@@ -50,24 +50,11 @@ class _VideoDetailsListState extends State<VideoDetailsList> {
                             SizedBox(
                               width: 10.w,
                             ),
-<<<<<<< HEAD
-                            IconButton(
-                              onPressed: () {},
-                              icon: Image.asset(
+                            InkWell(
+                              onTap: () {},
+                              child: Image.asset(
                                 ImagesPath.icShare,
                                 width: 20.w,
-                                height: 25.h,
-=======
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  saved = !saved;
-                                });
-                              },
-                              splashColor: Colors.transparent,
-                              child: Image.asset(
-                                saved ? ImagesPath.saved : ImagesPath.noSaved,
-                                width: 30.w,
                                 height: 30.h,
 >>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
                                 fit: BoxFit.fill,
