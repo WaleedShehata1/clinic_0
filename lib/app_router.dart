@@ -59,7 +59,7 @@ class AppRouter {
     GetPage(name: AppRoutes.videoDetails, page: () => const VideoDetails()),
     GetPage(
         name: AppRoutes.videoDetailsList, page: () => const VideoDetailsList()),
-    GetPage(name: AppRoutes.searchScreen, page: () => const SearchWidget()),
+    GetPage(name: AppRoutes.searchScreen, page: () =>  SearchWidget()),
     GetPage(name: AppRoutes.cart, page: () => const Cart()),
     // GetPage(name: AppRoutes.introScreen, page: () => const IntroScreen()),
     // GetPage(name: AppRoutes.loginScreen, page: () => const LoginScreen()),

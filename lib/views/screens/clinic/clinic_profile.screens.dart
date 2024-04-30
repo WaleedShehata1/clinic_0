@@ -9,17 +9,17 @@ class ClinicProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.primaryColor,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Stack(
-            alignment: Get.locale!.languageCode == "ar"
-                ? Alignment.topRight
-                : Alignment.topLeft,
-            children: [
-              Container(
+    return Stack(
+      alignment: Get.locale!.languageCode == "ar"
+          ? Alignment.topRight
+          : Alignment.topLeft,
+      children: [
+        Scaffold(
+          backgroundColor: AppColors.primaryColor,
+          body: SafeArea(
+            child: SingleChildScrollView(
+              //   physics: const BouncingScrollPhysics(),
+              child: Container(
                 margin: const EdgeInsets.only(top: 25.0),
                 child: Stack(
                   alignment: Alignment.topCenter,
@@ -41,7 +41,7 @@ class ClinicProfile extends StatelessWidget {
                           SizedBox(
                             height: 80.h,
                           ),
-                          Text('متجر المصري للمستلزمات',
+                          Text("Al-Masry Store".tr,
                               style: TextStyle(
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w700,
@@ -52,7 +52,7 @@ class ClinicProfile extends StatelessWidget {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('   30 كيلو متر   ',
+                                Text("30 km".tr,
                                     style: TextStyle(
                                         fontSize: 20.sp,
                                         fontWeight: FontWeight.w500,
@@ -147,13 +147,11 @@ class ClinicProfile extends StatelessWidget {
                                   child: const Icon(Icons.location_on_outlined,
                                       color: AppColors.primaryColor),
                                 ),
-                                title: Text(
-                                  "25 ش ابن السراج متفرع من وينجت",
-                                  style: TextStyle(
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.blackColor),
-                                ),
+                                title: Text("PharmacyAddress".tr,
+                                    style: TextStyle(
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.blackColor)),
                               ),
                               const Divider(
                                 color: AppColors.borderLine,
@@ -175,7 +173,7 @@ class ClinicProfile extends StatelessWidget {
                                 ),
                                 title: Align(
                                   alignment: Alignment.centerLeft,
-                                  child: Text('من 10 ص الي 12 م',
+                                  child: Text("PharmacyTime".tr,
                                       style: TextStyle(
                                           fontSize: 16.sp,
                                           fontWeight: FontWeight.w600,
@@ -215,43 +213,37 @@ class ClinicProfile extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
-                        top: -150,
-                        left: -290,
-                        child: Container(
-                          //  color: AppColors.borderLine ,
-                          width: 410.w,
-                          height: 350.h,
-
-                          decoration: BoxDecoration(
-                            color: AppColors.whiteColor.withOpacity(0.2),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(150),
-                            ),
-                          ),
-                        )),
-
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20.0, right: 20, left: 20),
-                      child: IconButton(
-                        onPressed: () {
-                          Get.toNamed(AppRoutes.homepageScreen);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_back,
-                          color: AppColors.whiteColor,
-                        ),
-                      ),
-                    ),
-                    // )
                   ],
                 ),
               ),
-            ],
+            ),
           ),
         ),
-      ),
+        Transform.translate(
+          offset: const Offset(-190, -150),
+          child: Container(
+            width: 320.w,
+            height: 320.h,
+            decoration: BoxDecoration(
+                color: const Color(0xffFFFFFF).withOpacity(0.2),
+                borderRadius: BorderRadius.all(const Radius.circular(300).r)),
+          ),
+        ),
+
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0, right: 20, left: 20),
+          child: IconButton(
+            onPressed: () {
+              Get.toNamed(AppRoutes.homepageScreen);
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: AppColors.whiteColor,
+            ),
+          ),
+        ),
+        // )
+      ],
     );
   }
 }

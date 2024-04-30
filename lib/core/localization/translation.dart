@@ -236,6 +236,9 @@ class MyTranslation extends Translations {
           "Al-Masry Pharmacy":"صيدلية المصري",
           "30 km":"30 كيلومتر",
           "Expiration date:":"تاريخ انتهاء الصلاحية:",
+            "PharmacyTime": 'من 10 ص الي 12 م',
+            "PharmacyAddress":"25 ش ابن السراج متفرع من وينجت",
+          "Al-Masry Store":'متجر المصري للمستلزمات',
 //notification
         "Notifications":"الإشعارات",
           "today":"اليوم",
@@ -492,6 +495,9 @@ class MyTranslation extends Translations {
           "Al-Masry Pharmacy":"Al-Masry Pharmacy",
           "30 km":"30 km",
           "Expiration date:":"Expiration date:",
+            "PharmacyTime": 'from 10 am to 12 pm',
+            "PharmacyAddress":"12 st wengat",
+          "Al-Masry Store":"Al-Masry Store",
 //notification
           "Notifications":"Notifications",
           "today":"today",

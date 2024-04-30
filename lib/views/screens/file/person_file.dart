@@ -22,13 +22,15 @@ class PersonFile extends StatelessWidget {
               onPressLeading: () => Get.back(),
             )),
         body: GetBuilder<PersonFileControllerImp>(builder: (controller) {
-          return PageView.builder(
-              controller: controller.pageController,
-              onPageChanged: (value) {
-                controller.onPageChanged(value);
-              },
-              itemCount: tabs.length,
-              itemBuilder: (context, i) => tabs[i]);
+          return Center(
+            child: PageView.builder(
+                controller: controller.pageController,
+                onPageChanged: (value) {
+                  controller.onPageChanged(value);
+                },
+                itemCount: tabs.length,
+                itemBuilder: (context, i) => tabs[i]),
+          );
         }));
   }
 }

@@ -13,51 +13,53 @@ class VideosList extends StatelessWidget {
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
-        children: [
+          children: [
             SizedBox(
-          height: 10.h,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-           SizedBox(
-            width: MediaQuery.of(context).size.width-50,
-            child: Expanded(
-              child: Align(
-                alignment: Alignment.center,
-                child: Text('videoHeader'.tr,
-                    style: TextStyle(fontFamily: "ArefRuqaa", fontSize: 20.sp,color: AppColors.blackColor)),
+              height: 10.h,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 50,
+                child: Expanded(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text('videoHeader'.tr,
+                        style: TextStyle(
+                            fontFamily: "ArefRuqaa",
+                            fontSize: 22.sp,
+                            color: AppColors.blackColor)),
+                  ),
+                ),
+              ),
+            ]),
+            SizedBox(
+              height: 10.h,
+            ),
+            const Divider(
+              color: AppColors.secondryColor,
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: List.generate(
+                10,
+                (index) => VideosWidget(
+                  image: ImagesPath.video,
+                  title: 'title2'.tr,
+                  time: '30',
+                  view: '2.4k',
+                  date: '6 ${'months'.tr}',
+                  onPress: () {
+                    Get.toNamed(AppRoutes.videoDetails);
+                  },
+                  showPlayIcon: true,
+                ),
               ),
             ),
-          ),
-        ]),
-        SizedBox(
-          height: 10.h,
+          ],
         ),
-        const Divider(
-          color: AppColors.secondryColor,
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: List.generate(
-            10,
-            (index) => VideosWidget(
-              image: ImagesPath.video,
-              title: 'title2'.tr,
-              time: '30',
-              view: '2.4k',
-              date: '6 ${'months'.tr}',
-              onPress: () { Get.toNamed( AppRoutes.videoDetails);}, 
-              showPlayIcon: true,
-            ),
-          ),
-        ),
-                
-                  ],
-                ),
       ),
     );
   }

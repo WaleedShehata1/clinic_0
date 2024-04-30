@@ -9,19 +9,20 @@ Widget iconText({
   required double margin,
   required String text,
   required String image,
+  Color? color,
 }) {
-  return CustomBottonIconAndImage(
-    marginHorizontal: 15.w,
-    marginvertical: margin,
-    withBorder: 0,
-    borderRadius: 12.r,
-    padding: 0,
-    onTap: () {},
-    child: Container(
-      padding: EdgeInsets.all(10.w),
-      decoration: BoxDecoration(
-          color: const Color(0xffF4F4F4),
-          borderRadius: BorderRadius.circular(12).r),
+  return Container(
+    margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+    decoration: BoxDecoration(
+        color: color ?? const Color(0xffF4F4F4),
+        borderRadius: BorderRadius.circular(12).r),
+    child: CustomBottonIconAndImage(
+      marginHorizontal: 15.w,
+      marginvertical: margin,
+      withBorder: 0,
+      borderRadius: 12.r,
+      padding: 0,
+      onTap: () {},
       child: Row(children: [
         Image.asset(
           image,

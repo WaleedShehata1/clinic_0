@@ -6,16 +6,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class VideoDetails extends StatelessWidget {
+class VideoDetails extends StatefulWidget {
   const VideoDetails({super.key});
 
+  @override
+  State<VideoDetails> createState() => _VideoDetailsState();
+}
+
+class _VideoDetailsState extends State<VideoDetails> {
+  bool saved = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(60.0),
           child: AppBarWibget(
-            currentIndex: 5,
+            currentIndex: 4,
             bgColor: AppColors.appBg,
           )),
       body: SingleChildScrollView(
@@ -36,17 +42,39 @@ class VideoDetails extends StatelessWidget {
               SizedBox(
                 width: 10.w,
               ),
+<<<<<<< HEAD
+               IconButton(
+                              onPressed: () {},
+                              icon: Image.asset(
+                                ImagesPath.icShare,
+                                width: 20.w,
+                                height: 25.h,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                           
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.share_outlined,
+                                  color: AppColors.primaryColor,
+                                  size: 25.sp,
+                                )),
+=======
               InkWell(
-                onTap: () {},
+                borderRadius: BorderRadius.circular(15.r),
+                onTap: () {
+                  setState(() {
+                    saved = !saved;
+                  });
+                },
+                splashColor: Colors.transparent,
                 child: Image.asset(
-                  ImagesPath.icShare,
-                  width: 20.w,
+                  saved ? ImagesPath.saved : ImagesPath.noSaved,
+                  width: 28.w,
                   height: 30.h,
                   fit: BoxFit.fill,
                 ),
-              ),
-              SizedBox(
-                width: 10.w,
               ),
               IconButton(
                   onPressed: () {},
@@ -55,6 +83,7 @@ class VideoDetails extends StatelessWidget {
                     color: AppColors.primaryColor,
                     size: 30.sp,
                   )),
+>>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
             ]),
             SizedBox(
               height: 5.h,
@@ -136,7 +165,7 @@ class VideoDetails extends StatelessWidget {
                       width: 10.w,
                     ),
                     Text(
-                        " ${"hour".tr} 38 ${"and".tr} ${"min".tr}/45 ${"video".tr}",
+                        "12 ${"hour".tr} ${"and".tr} 38 ${"min".tr} / 45 ${"video".tr}",
                         //  textDirection:TextDirection.rtl ,
                         style: TextStyle(
                             fontSize: 14.sp,

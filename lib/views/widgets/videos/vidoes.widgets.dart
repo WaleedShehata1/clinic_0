@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class VideosWidget extends StatelessWidget {
+class VideosWidget extends StatefulWidget {
   final String image;
   final String title;
   final String view;
@@ -24,44 +24,62 @@ class VideosWidget extends StatelessWidget {
   });
 
   @override
+  State<VideosWidget> createState() => _VideosWidgetState();
+}
+
+class _VideosWidgetState extends State<VideosWidget> {
+  bool saved = false;
+  @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPress,
+      onTap: widget.onPress,
       child: Container(
         //height:120.h,
         padding: const EdgeInsets.all(8.8),
-        margin: const EdgeInsets.symmetric(vertical: 0.1),
+
         child: Row(
-          //  mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
+<<<<<<< HEAD
               flex: 1,
+              child:  Stack(
+                alignment: AlignmentDirectional.bottomStart,
+                children: [
+                  Container(
+                    height: 80.h,
+                    constraints: BoxConstraints(minHeight: 80.h),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        image,
+                        width: double.maxFinite,
+                       // height: 100.h,
+=======
               child: Stack(
                 alignment: AlignmentDirectional.bottomStart,
                 children: [
-                  InkWell(
-                    onTap: onPress,
-                    child: Container(
-                      height: 100.h,
-                      constraints: BoxConstraints(minHeight: 100.h),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          image,
-                          width: double.maxFinite,
-                          height: 100.h,
-                          fit: BoxFit.fill,
-                        ),
+                  Container(
+                    height: 100.h,
+                    constraints: BoxConstraints(minHeight: 100.h),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        widget.image,
+                        width: double.maxFinite,
+                        height: 100.h,
+>>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
                   Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                            bottom: 10, right: 10, left: 10),
-                        padding: const EdgeInsets.all(4),
+                        margin: EdgeInsets.only(
+                            bottom: 10.h, right: 10.w, left: 10.w),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 6.w, vertical: 3.w),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8.0),
                             color: AppColors.primaryColor),
@@ -70,19 +88,26 @@ class VideosWidget extends StatelessWidget {
                           child: Row(
                             children: [
                               Text(
-                                time,
-                                // textDirection:TextDirection.rtl ,
+                                widget.time,
                                 style: TextStyle(
                                     color: AppColors.whiteColor,
-                                    fontSize: 12.sp),
+<<<<<<< HEAD
+                                    fontSize: 10.sp),
+=======
+                                    fontSize: 16.sp),
+>>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
                               ),
-                              showPlayIcon != null
+                              widget.showPlayIcon != null
                                   ? Row(
                                       children: [
                                         Image.asset(
                                           ImagesPath.icPlay,
-                                          // width: 20.w,
-                                          // height: 20.h,
+<<<<<<< HEAD
+                                          width: 20.w,
+                                           height: 20.h,
+=======
+                                          width: 25.w,
+>>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
                                           fit: BoxFit.fill,
                                         ),
                                         SizedBox(
@@ -117,37 +142,54 @@ class VideosWidget extends StatelessWidget {
                         children: [
                           Container(
                             width: 120.w,
+                            padding: EdgeInsets.only(top: 5),
                             //  height: 80.h,
                             // color: Colors.amber,
                             constraints: BoxConstraints(minHeight: 60.h),
                             child: Text(
-                              title,
+                              widget.title,
                               maxLines: 2,
                               // textDirection: TextDirection.rtl,
                               //textAlign: TextAlign.right,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 16.sp,
+                                  fontSize: 18.sp,
                                   color: AppColors.blackColor),
                             ),
                           ),
+<<<<<<< HEAD
+                        
+                         IconButton(
+                              onPressed: () {},
+                              icon: Image.asset(
+                                ImagesPath.icShare,
+                                width: 20.w,
+                                height: 25.h,
+                                fit: BoxFit.fill,
+                              ),
+=======
                           SizedBox(
                             width: 5.w,
                           ),
                           InkWell(
-                            onTap: () {},
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15.r),
+                            onTap: () {
+                              setState(() {
+                                saved = !saved;
+                              });
+                            },
+                            splashColor: Colors.transparent,
                             child: Image.asset(
-                              ImagesPath.icShare,
-                              width: 20.w,
-                              height: 25.h,
+                              saved ? ImagesPath.saved : ImagesPath.noSaved,
+                              width: 24.w,
+                              height: 26.h,
                               fit: BoxFit.fill,
+>>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
                             ),
-                          ),
                         ]),
                     SizedBox(
-                      height: 10.h,
+                      height: 5.h,
                     ),
                     Container(
                       padding: const EdgeInsets.only(right: 5.5),
@@ -155,24 +197,24 @@ class VideosWidget extends StatelessWidget {
                         // mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            '${view} ${'seen'.tr}',
+                            '${widget.view} ${'seen'.tr}',
                             style: TextStyle(
                                 //  fontWeight: FontWeight.w400,
                                 fontSize: Get.locale!.languageCode == "ar"
-                                    ? 12.sp
-                                    : 10.sp,
+                                    ? 14.sp
+                                    : 12.sp,
                                 color: AppColors.blackColor),
                           ),
                           SizedBox(
                             width: 10.w,
                           ),
                           Text(
-                            '${'from'.tr} ${date} ',
+                            '${'from'.tr} ${widget.date} ',
                             style: TextStyle(
                                 //fontWeight: FontWeight.w400,
                                 fontSize: Get.locale!.languageCode == "ar"
-                                    ? 12.sp
-                                    : 10.sp,
+                                    ? 14.sp
+                                    : 12.sp,
                                 color: AppColors.blackColor),
                           ),
                         ],

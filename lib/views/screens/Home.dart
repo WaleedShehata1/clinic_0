@@ -2,7 +2,7 @@
 
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/screens/clinic/clinic_services.screens.dart';
-import 'package:clinic/views/screens/clinic/text.dart';
+
 import 'package:clinic/views/screens/shop_online/online_shop.dart';
 import 'package:clinic/views/screens/videos/videos.list.screens.dart';
 import 'package:clinic/views/widgets/appBar.widgets.dart';
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import 'clinic/hospitals.dart';
 import 'home_page/home_page.dart';
 
 class Home extends StatefulWidget {
@@ -26,14 +27,11 @@ class _HomeState extends State<Home> {
     BottomNavigationBarItem(
         icon: const Icon(
           Icons.home,
-          //  size: 20,
         ),
         label: "home".tr),
     BottomNavigationBarItem(
         icon: const Icon(
           Icons.dashboard_outlined,
-          //  size: 20,
-          //  size: 20,
         ),
         label: "suppliers".tr),
     BottomNavigationBarItem(
@@ -45,17 +43,8 @@ class _HomeState extends State<Home> {
     BottomNavigationBarItem(
         icon: const Icon(
           Icons.medication_liquid,
-          //  size: 20,
         ),
-        //icon: SvgPicture.asset(ImagesPath.pharmacyIc),
         label: "pharmacy".tr),
-    // BottomNavigationBarItem(
-    //     icon: const Icon(
-    //       Icons.home_work_outlined,
-    //       //    size: 20,
-    //     ),
-    //     //icon: SvgPicture.asset(ImagesPath.visitingsIc),
-    //     label: "visitings".tr),
     BottomNavigationBarItem(
       icon: SvgPicture.asset(ImagesPath.icEdu),
       label: "educationalWed".tr,
@@ -67,7 +56,7 @@ class _HomeState extends State<Home> {
   List body = [
     const HomePage(),
     const ClinicServices(),
-    const MyWidget(),
+    const Hospitals(),
     const OnlineShop(),
     const VideosList()
   ];

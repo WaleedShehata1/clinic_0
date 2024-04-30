@@ -7,9 +7,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class VideoDetailsList extends StatelessWidget {
+class VideoDetailsList extends StatefulWidget {
   const VideoDetailsList({super.key});
 
+  @override
+  State<VideoDetailsList> createState() => _VideoDetailsListState();
+}
+
+class _VideoDetailsListState extends State<VideoDetailsList> {
+  bool saved = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,7 +24,7 @@ class VideoDetailsList extends StatelessWidget {
         appBar: const PreferredSize(
             preferredSize: Size.fromHeight(60.0),
             child: AppBarWibget(
-              currentIndex: 5,
+              currentIndex: 4,
               bgColor: AppColors.appBg,
             )),
         body: SingleChildScrollView(
@@ -29,7 +35,7 @@ class VideoDetailsList extends StatelessWidget {
                   Column(
                     children: [
                       SizedBox(
-                        height: 10.h,
+                        height: 5.h,
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,31 +50,40 @@ class VideoDetailsList extends StatelessWidget {
                             SizedBox(
                               width: 10.w,
                             ),
-                            InkWell(
-                              onTap: () {},
-                              child: Image.asset(
+<<<<<<< HEAD
+                            IconButton(
+                              onPressed: () {},
+                              icon: Image.asset(
                                 ImagesPath.icShare,
                                 width: 20.w,
+                                height: 25.h,
+=======
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  saved = !saved;
+                                });
+                              },
+                              splashColor: Colors.transparent,
+                              child: Image.asset(
+                                saved ? ImagesPath.saved : ImagesPath.noSaved,
+                                width: 30.w,
                                 height: 30.h,
+>>>>>>> a10604028f7a14db966cae5ade8592fb73dd560e
                                 fit: BoxFit.fill,
                               ),
                             ),
-                            SizedBox(
-                              width: 10.w,
-                            ),
+                           
                             IconButton(
                                 onPressed: () {},
                                 icon: Icon(
                                   Icons.share_outlined,
                                   color: AppColors.primaryColor,
-                                  size: 30.sp,
+                                  size: 25.sp,
                                 )),
                           ]),
                       SizedBox(
                         height: 5.h,
-                      ),
-                      SizedBox(
-                        height: 10.h,
                       ),
                       const Divider(
                         color: AppColors.secondryColor,
@@ -79,7 +94,6 @@ class VideoDetailsList extends StatelessWidget {
                       SizedBox(
                         height: context.screenHeight - 150.h,
                         child: ListView.builder(
-                          //    scrollDirection: NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           padding: const EdgeInsets.all(8),
                           itemCount: 10,
